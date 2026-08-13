@@ -3,12 +3,12 @@
 [English](README.en.md) · 简体中文
 
 > 存储芯片自动测试与竞赛 PAT 向量平台<br>
-> 全国大学生集成电路创新创业大赛「胜达克」企业命题 · 西南赛区一等奖（赛区第一）
+> 全国大学生集成电路创新创业大赛「胜达克」企业命题 · 西南赛区一等奖
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Platform](https://img.shields.io/badge/primary-Windows%2010%20%7C%2011-0078D4?logo=windows)](#快速开始)
 [![CI](https://github.com/Xiaomiju-x/memory-ate-pat-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Xiaomiju-x/memory-ate-pat-platform/actions/workflows/ci.yml)
-[![Competition](https://img.shields.io/badge/西南赛区-一等奖%20%7C%20赛区第一-CB2B2B)](docs/competition.md)
+[![Competition](https://img.shields.io/badge/西南赛区-一等奖-CB2B2B)](docs/competition.md)
 [![Finals](https://img.shields.io/badge/全国总决赛-准备中-F59E0B)](docs/roadmap.md)
 
 ![Memory ATE PAT Platform：AT24C02 初赛平台、BY25Q40AL 复赛平台与决赛准备状态](docs/assets/hero.svg)
@@ -19,13 +19,13 @@
 - **复赛：BY25Q40AL 竞赛优化 PAT 平台**——围绕 Standard/Dual/Quad SPI、六类 Memory 数据模式、参数化生成和格式验证构建的专用生成器；
 - **决赛：准备中**——决赛 PAT 向量生成测试软件仍在开发，本仓库只预留公开位置，不把计划中的能力描述为已完成。
 
-项目获得全国大学生集成电路创新创业大赛「胜达克」企业命题**西南赛区一等奖，并位列赛区第一**。奖项属于参赛团队；仓库维护者主要负责代码与算法、初赛平台搭建，以及复赛和决赛阶段面向竞赛约束的 PAT 软件开发。
+项目获得全国大学生集成电路创新创业大赛「胜达克」企业命题**西南赛区一等奖**。奖项属于参赛团队；仓库维护者主要负责代码与算法、初赛平台搭建，以及复赛和决赛阶段面向竞赛约束的 PAT 软件开发。
 
 奖项证书已获授权公开；展示版本遮蔽了二维码与证书编号，保留参赛单位、指导教师、参赛队员、赛题和奖项信息。
 
 ![全国大学生集成电路创新创业大赛西南赛区一等奖证书（二维码与证书编号已遮蔽）](docs/assets/awards/southwest-first-prize-redacted.png)
 
-> 证书用于记录参赛团队获得西南赛区一等奖；“赛区第一”同时以[大赛官网获奖名单](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)为依据。赛事名称、印章和相关标识归各自权利人所有，展示不表示主办方或命题企业为本开源仓库背书。
+> 证书用于记录参赛团队获得西南赛区一等奖；[大赛官网获奖名单](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)提供了公开赛事记录。赛事名称、印章和相关标识归各自权利人所有，展示不表示主办方或命题企业为本开源仓库背书。
 
 > **English summary:** An open-source memory-device ATE/PAT generation project developed for the “ShengDaKe” enterprise challenge of the National College Student Integrated Circuit Innovation and Entrepreneurship Competition. It contains the completed AT24C02 preliminary-round platform and the competition-tuned BY25Q40AL regional-round generator. The national-finals software is still in preparation and is intentionally not presented as complete. Documentation is Chinese-first; commands, file formats, architecture diagrams, and code identifiers are English-friendly.
 

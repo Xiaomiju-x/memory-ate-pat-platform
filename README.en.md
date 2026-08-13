@@ -18,11 +18,11 @@ Memory ATE PAT Platform is an engineering project for generating, inspecting, an
 - **Southwest regional round — BY25Q40AL platform:** a competition-tuned GUI/CLI generator for Standard, Dual, and Quad SPI, six memory-test modes, address-range handling, PAT validation, and reproducible public tests.
 - **National finals:** software is still being developed. This repository reserves a place for it but does not describe planned work as complete.
 
-The team received **First Prize and ranked first in the Southwest regional stage**. This is a team award. The repository maintainer’s primary responsibilities are code and algorithms, construction of the preliminary-round platform, and PAT software development for the regional and national-final stages. “Ranked first” refers only to the regional stage; no national-final result is claimed. The certificate is published with permission; its QR code and certificate number are redacted while the award information and credited participants remain visible.
+The team received **First Prize in the Southwest regional stage**. This is a team award. The repository maintainer’s primary responsibilities are code and algorithms, construction of the preliminary-round platform, and PAT software development for the regional and national-final stages. No national-final result is claimed. The certificate is published with permission; its QR code and certificate number are redacted while the award information and credited participants remain visible.
 
 ![Certificate for First Prize in the Southwest regional stage, with its QR code and certificate number redacted](docs/assets/awards/southwest-first-prize-redacted.png)
 
-> Published to document the team award. The regional ranking is also supported by the [official award listing](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083). Names, seals, and competition marks remain with their respective rights holders; displaying the certificate does not imply endorsement of this repository.
+> Published to document the team award. The [official award listing](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083) provides an additional public competition record. Names, seals, and competition marks remain with their respective rights holders; displaying the certificate does not imply endorsement of this repository.
 
 The official context is available from the [10th competition rules](https://univ.ciciec.com/col.jsp?id=123), the [official ShengDaKe challenge page](https://univ.ciciec.com/nd.jsp?id=1024), and the [official award listing](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083). The detailed project story is documented in [`docs/competition.md`](docs/competition.md).
 

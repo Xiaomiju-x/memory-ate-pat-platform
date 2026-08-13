@@ -4,15 +4,15 @@
 
 本项目为全国大学生集成电路创新创业大赛[第十届“胜达克”企业命题](https://univ.ciciec.com/nd.jsp?id=1024)开发，主题是存储类芯片自动化测试系统与 PAT 测试向量软件。
 
-团队在**西南赛区获得一等奖，并取得赛区第一名**。这里的“赛区第一”指西南赛区阶段，不延伸表述为全国总决赛名次。全国总决赛仍在准备中。大赛官网已发布[成都工业学院赛点获奖名单公示](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)；证书是本项目奖项口径的直接材料。
+团队在**西南赛区获得一等奖**。全国总决赛仍在准备中，不在此声称任何总决赛奖项。大赛官网已发布[成都工业学院赛点获奖名单公示](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)；证书是本项目奖项口径的直接材料。
 
 证书已获授权公开。展示版本保留团队成员、指导教师和奖项信息，遮蔽二维码与证书编号，以减少无关标识信息的传播。
 
 ![全国大学生集成电路创新创业大赛西南赛区一等奖证书（二维码与证书编号已遮蔽）](assets/awards/southwest-first-prize-redacted.png)
 
-> 图片仅用于记录团队赛事经历。证书证明西南赛区一等奖，“赛区第一”同时引用上方大赛官网获奖名单；展示不表示主办方或命题企业为本开源仓库背书。
+> 图片仅用于记录团队获得西南赛区一等奖的赛事经历；上方大赛官网获奖名单提供公开赛事记录。展示不表示主办方或命题企业为本开源仓库背书。
 
-> **English:** This project was developed for the “ShengDaKe” enterprise challenge of China’s National College Student Integrated Circuit Innovation and Entrepreneurship Competition. The team received First Prize and ranked first in the Southwest regional stage. The national finals are still in preparation; no finals result or completed finals software is claimed here.
+> **English:** This project was developed for the “ShengDaKe” enterprise challenge of China’s National College Student Integrated Circuit Innovation and Entrepreneurship Competition. The team received First Prize in the Southwest regional stage. The national finals are still in preparation; no finals result or completed finals software is claimed here.
 
 ## 三个阶段，三种工程重点
 
