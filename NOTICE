@@ -26,3 +26,9 @@ such assets must not be committed without explicit written authorization.
 Runtime dependency notice: CustomTkinter is distributed separately under the
 MIT License by Tom Schimansky and contributors. It is not vendored in this
 repository; installations receive its license metadata from the Python package.
+
+The redacted award certificate at
+docs/assets/awards/southwest-first-prize-redacted.png is published solely for
+factual documentation of the team award. Its certificate design, seals, and
+competition marks are not relicensed under Apache-2.0 and remain with their
+respective rights holders. The QR code and certificate number are redacted.

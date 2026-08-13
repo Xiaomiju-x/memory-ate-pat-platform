@@ -72,10 +72,6 @@ Desktop.ini
 # Local compatibility environment used during release checks
 /.venv/
 
-# Award image contains names of team members and advisers. Keep the prepared
-# redacted candidate local until every named person has consented to publication.
-/docs/assets/awards/southwest-first-prize-redacted.png
-
 # Local submission bundles and internal/reference material.
 # These may contain duplicated builds, author metadata, or third-party content.
 /初赛提交.exe打包文件夹/
