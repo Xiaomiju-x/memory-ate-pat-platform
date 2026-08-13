@@ -151,6 +151,10 @@ class PATFormatterTests(unittest.TestCase):
         ]
         program = PATFormatter.generate_prg_file(sections, period_ns=2500)
 
+        self.assertRegex(program, r"//   日期 = \d{4}年\d{2}月\d{2}日;")
+        source = (ROOT / "at24c02_pat_generator.py").read_text(encoding="utf-8")
+        self.assertNotIn("strftime('%Y年%m月%d日')", source)
+
         for marker in ("@@TIMING_DEFINE", "@@AC_SET_1", "@@END_AC_SET_1"):
             self.assertIn(marker, timing)
         self.assertIn("PERIOD =   2500ns;", timing)

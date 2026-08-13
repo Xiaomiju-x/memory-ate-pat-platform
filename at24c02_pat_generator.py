@@ -5513,7 +5513,11 @@ class PATFormatter:
         # ---- 文件头注释 ----
         lines.append(f"//@@历史记录")
         lines.append(f"//   版本号 = v1;")
-        lines.append(f"//   日期 = {now.strftime('%Y年%m月%d日')};")
+        # Compose the localized date directly. Python 3.10 on Windows may route
+        # non-ASCII strftime format literals through the active C locale and
+        # raise UnicodeEncodeError even when PYTHONUTF8=1.
+        localized_date = f"{now.year:04d}年{now.month:02d}月{now.day:02d}日"
+        lines.append(f"//   日期 = {localized_date};")
         lines.append(f"//   描述")
         lines.append(f"//     设备名称 : {chip_name}")
         lines.append(f"//     封装类型 : SOP8")

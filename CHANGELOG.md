@@ -33,6 +33,7 @@
 - 复赛公开版不读取、不复制、不对比，也不附带赛方或企业提供的黄金 PAT、FUNC 模板、
   私有规范、培训材料或其他受限资产。
 - HTML 统计报告统一引用主程序的 `VERSION` 常量，避免报告与应用显示不同版本。
+- PRG 中文日期不再把非 ASCII 字符交给 Windows C locale 的 `strftime`，兼容 Python 3.10 英文区域设置。
 
 ### Known limitations
 
