@@ -1,0 +1,54 @@
+# Normalize source and documentation for reproducible diffs.
+* text=auto
+
+*.py      text eol=lf
+*.md      text eol=lf
+*.json    text eol=lf
+*.toml    text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.html    text eol=lf
+*.svg     text eol=lf
+*.xml     text eol=lf
+
+# Windows launchers and ATE exchange files are consumed primarily on Windows.
+*.bat     text eol=crlf
+*.ps1     text eol=crlf
+*.pat     text eol=crlf
+*.prg     text eol=crlf
+*.tim     text eol=crlf
+*.lvl     text eol=crlf
+*.stil    text eol=crlf
+*.wgl     text eol=crlf
+*.csv     text eol=crlf
+*.txt     text eol=crlf
+
+# Fixed-width ATE exchange files and human-readable vector tables may use
+# trailing spaces as meaningful column padding. Do not flag that generated
+# alignment as a source-code whitespace error.
+*.pat     whitespace=-trailing-space
+*.prg     whitespace=-trailing-space
+*.tim     whitespace=-trailing-space
+*.lvl     whitespace=-trailing-space
+*.stil    whitespace=-trailing-space
+*.wgl     whitespace=-trailing-space
+*.csv     whitespace=-trailing-space
+*.txt     whitespace=-trailing-space
+
+# Binary assets must never be line-ending normalized.
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.webp    binary
+*.ico     binary
+*.pdf     binary
+*.docx    binary
+*.pptx    binary
+*.xlsx    binary
+*.zip     binary
+*.7z      binary
+*.rar     binary
+*.exe     binary
+*.pkg     binary
+*.pyz     binary

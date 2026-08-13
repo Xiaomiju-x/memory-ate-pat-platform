@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite the repository and the exact version or
+  commit you used.
+title: "Memory ATE PAT Platform"
+type: software
+version: 8.0.0
+authors:
+  - name: "Xiaomiju-x"
+  - name: "Memory ATE PAT Platform Contributors"
+abstract: >-
+  An open-source memory-device ATE test and PAT generation platform containing
+  the completed AT24C02 preliminary-round system and the competition-tuned
+  BY25Q40AL Southwest regional-round generator. National-finals software is in
+  preparation and is not represented as complete.
+repository-code: https://github.com/Xiaomiju-x/memory-ate-pat-platform
+url: https://github.com/Xiaomiju-x/memory-ate-pat-platform
+license: Apache-2.0
+keywords:
+  - automatic test equipment
+  - semiconductor testing
+  - memory testing
+  - PAT vector generation
+  - I2C EEPROM
+  - SPI NOR flash

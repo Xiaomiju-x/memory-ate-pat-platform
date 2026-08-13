@@ -1,0 +1,51 @@
+// AT24C02 Timing Configuration File
+// Protocol: I2C
+// Generated: 2026-03-22 10:17:56
+// Voltage: 5.0V
+// Tool: EEPROM PAT Generator v6.0.0
+
+TIMING_SET timing_i2c {
+    PERIOD  = 2500ns;
+
+    // Drive timing (ATE drives DUT inputs)
+    tDRV_LEAD   = 0ns;           // Drive data at period start
+    tDRV_TRAIL  = 2500ns;  // Drive data hold to period end
+
+    // Compare/Strobe timing (ATE samples DUT outputs)
+    tCMP_STROBE = 1250ns;       // Compare strobe at mid-period
+    tCMP_WINDOW = 125ns;  // Strobe window width
+
+    // Clock generation (for SCL)
+    tPLC  = 0ns;          // SCL low  edge (period start)
+    tPHC  = 1250ns;     // SCL high edge (mid-period)
+
+    // I2C Datasheet constraints reference:
+    // fSCL_max_kHz = 1000
+    // tLOW_min = 1300 ns
+    // tHIGH_min = 600 ns
+    // tSU_STA_min = 600 ns
+    // tHD_STA_min = 600 ns
+    // tSU_DAT_min = 100 ns
+    // tSU_STO_min = 600 ns
+    // tBUF_min = 1300 ns
+    // tHD_DAT_min = 0 ns
+}
+
+// Edge set definitions for bidirectional SDA
+EDGE_SET sda_drive {
+    FORMAT = NR;       // Non-Return
+    tLEAD  = 0ns;
+    tTRAIL = 2500ns;
+}
+
+EDGE_SET sda_compare {
+    FORMAT = WINDOW;
+    tSTROBE = 1250ns;
+    tWINDOW = 125ns;
+}
+
+EDGE_SET scl_clock {
+    FORMAT = RZ;        // Return-to-Zero (clock)
+    tLEAD  = 0ns;       // SCL rise
+    tTRAIL = 1250ns;   // SCL fall
+}

@@ -1,0 +1,20 @@
+﻿Test Segment,Description,Vectors,Percentage,Vector Time (ms),Write Ops,tWR Wait (ms),Total Time (ms)
+OS_TEST,Open/Short Continuity Test,46,0.1%,0.12,0,0,0.12
+DC_TEST,DC Parameter Test,1781,2.8%,4.45,6,30,34.45
+FUNC_BW,Byte Write + Read,368,0.6%,0.92,1,5,5.92
+FUNC_PW,Page Write + Read,872,1.4%,2.18,1,5,7.18
+FUNC_BOUND,Address Boundary,770,1.2%,1.93,2,10,11.93
+FUNC_WP,WP Protect Test,578,0.9%,1.45,2,10,11.45
+FUNC_WRAP,Page Wrap Test,947,1.5%,2.37,1,5,7.37
+FUNC_CAR,Current Address Read,657,1.0%,1.64,2,10,11.64
+MARCH_TEST,March C- Memory Test,14610,22.8%,36.52,40,200,236.53
+MARCHB_TEST,March B Memory Test,25849,40.3%,64.62,88,440,504.62
+SCAN_TEST,Address Space Scan Test,2926,4.6%,7.32,8,40,47.31
+RET_TEST,Data Retention Test,8833,13.8%,22.08,24,120,142.08
+ERR_TEST,I2C Error/Boundary Test,2128,3.3%,5.32,4,20,25.32
+ENDUR_TEST,Write Endurance Test,3817,5.9%,9.54,10,50,59.54
+TOTAL,All Segments,64182,100%,160.46,189,945,1105.45
+
+Period (ns),2500
+Generated,2026-03-25 19:58:57
+Tool,AT24C02 PAT Generator v8.0.0

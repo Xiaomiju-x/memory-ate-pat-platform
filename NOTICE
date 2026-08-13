@@ -1,0 +1,28 @@
+Memory ATE PAT Platform
+Copyright 2026 Xiaomiju-x and contributors
+
+This product is licensed under the Apache License, Version 2.0.
+
+AT24C02, BY25Q40AL, AdaptStar-E/EStar, and all competition, institution,
+company, and product names are used only for identification and technical
+description. Their trademarks remain the property of their respective owners.
+This project is an independent student open-source project and is not an
+official distribution of any chip vendor, ATE vendor, competition organizer,
+or sponsoring company.
+
+Third-party datasheets, standards, training material, competition documents,
+fonts, logos, screenshots, and vendor-supplied pattern examples are not covered
+by the project's Apache-2.0 license unless their own license notice explicitly
+says otherwise. Do not redistribute such material without permission. Links,
+citations, or clean-room compatible examples should be preferred.
+
+The project's Apache-2.0 license covers only original code, documentation, and
+generated examples that the project contributors have the right to license.
+Competition or company-provided technical solutions, reference cases,
+databases, templates, tools, samples, and background material remain outside
+that grant. The competition rules may also impose confidentiality obligations;
+such assets must not be committed without explicit written authorization.
+
+Runtime dependency notice: CustomTkinter is distributed separately under the
+MIT License by Tom Schimansky and contributors. It is not vendored in this
+repository; installations receive its license metadata from the Python package.

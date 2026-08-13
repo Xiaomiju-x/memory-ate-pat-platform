@@ -1,0 +1,66 @@
+================================================================================
+  AT24C02 PAT向量预览 - Open/Short Continuity Test
+  生成时间: 2026-03-25 19:58:57
+  向量总数: 46
+================================================================================
+
+  Vec# |  A0  |  A1  |  A2  |  WP  |  SCL |  SDA | 说明
+-----------------------------------------------------------------------------------
+     0 |   0  |   0  |   0  |   0  |   0  |   0  | OS_TEST: All pins drive LOW
+     1 |   0  |   0  |   0  |   0  |   0  |   0  | Hold LOW
+     2 |   0  |   0  |   0  |   0  |   0  |   0  | Hold LOW
+     3 |   0  |   0  |   0  |   0  |   0  |   0  | Hold LOW
+     4 |   1  |   1  |   1  |   1  |   1  |   1  | OS_TEST: All pins drive HIGH
+     5 |   1  |   1  |   1  |   1  |   1  |   1  | Hold HIGH
+     6 |   1  |   1  |   1  |   1  |   1  |   1  | Hold HIGH
+     7 |   1  |   1  |   1  |   1  |   1  |   1  | Hold HIGH
+     8 |   1  |   0  |   0  |   0  |   0  |   0  | Walking-1: A0=HIGH, others=LOW
+     9 |   1  |   0  |   0  |   0  |   0  |   0  | Hold A0=HIGH
+    10 |   1  |   0  |   0  |   0  |   0  |   0  | Hold A0=HIGH
+    11 |   0  |   1  |   0  |   0  |   0  |   0  | Walking-1: A1=HIGH, others=LOW
+    12 |   0  |   1  |   0  |   0  |   0  |   0  | Hold A1=HIGH
+    13 |   0  |   1  |   0  |   0  |   0  |   0  | Hold A1=HIGH
+    14 |   0  |   0  |   1  |   0  |   0  |   0  | Walking-1: A2=HIGH, others=LOW
+    15 |   0  |   0  |   1  |   0  |   0  |   0  | Hold A2=HIGH
+    16 |   0  |   0  |   1  |   0  |   0  |   0  | Hold A2=HIGH
+    17 |   0  |   0  |   0  |   1  |   0  |   0  | Walking-1: WP=HIGH, others=LOW
+    18 |   0  |   0  |   0  |   1  |   0  |   0  | Hold WP=HIGH
+    19 |   0  |   0  |   0  |   1  |   0  |   0  | Hold WP=HIGH
+    20 |   0  |   0  |   0  |   0  |   1  |   0  | Walking-1: SCL=HIGH, others=LOW
+    21 |   0  |   0  |   0  |   0  |   1  |   0  | Hold SCL=HIGH
+    22 |   0  |   0  |   0  |   0  |   1  |   0  | Hold SCL=HIGH
+    23 |   0  |   0  |   0  |   0  |   0  |   1  | Walking-1: SDA=HIGH, others=LOW
+    24 |   0  |   0  |   0  |   0  |   0  |   1  | Hold SDA=HIGH
+    25 |   0  |   0  |   0  |   0  |   0  |   1  | Hold SDA=HIGH
+    26 |   0  |   1  |   1  |   1  |   1  |   1  | Walking-0: A0=LOW, others=HIGH
+    27 |   0  |   1  |   1  |   1  |   1  |   1  | Hold A0=LOW
+    28 |   0  |   1  |   1  |   1  |   1  |   1  | Hold A0=LOW
+    29 |   1  |   0  |   1  |   1  |   1  |   1  | Walking-0: A1=LOW, others=HIGH
+    30 |   1  |   0  |   1  |   1  |   1  |   1  | Hold A1=LOW
+    31 |   1  |   0  |   1  |   1  |   1  |   1  | Hold A1=LOW
+    32 |   1  |   1  |   0  |   1  |   1  |   1  | Walking-0: A2=LOW, others=HIGH
+    33 |   1  |   1  |   0  |   1  |   1  |   1  | Hold A2=LOW
+    34 |   1  |   1  |   0  |   1  |   1  |   1  | Hold A2=LOW
+    35 |   1  |   1  |   1  |   0  |   1  |   1  | Walking-0: WP=LOW, others=HIGH
+    36 |   1  |   1  |   1  |   0  |   1  |   1  | Hold WP=LOW
+    37 |   1  |   1  |   1  |   0  |   1  |   1  | Hold WP=LOW
+    38 |   1  |   1  |   1  |   1  |   0  |   1  | Walking-0: SCL=LOW, others=HIGH
+    39 |   1  |   1  |   1  |   1  |   0  |   1  | Hold SCL=LOW
+    40 |   1  |   1  |   1  |   1  |   0  |   1  | Hold SCL=LOW
+    41 |   1  |   1  |   1  |   1  |   1  |   0  | Walking-0: SDA=LOW, others=HIGH
+    42 |   1  |   1  |   1  |   1  |   1  |   0  | Hold SDA=LOW
+    43 |   1  |   1  |   1  |   1  |   1  |   0  | Hold SDA=LOW
+    44 |   0  |   0  |   0  |   0  |   1  |   1  | Return to IDLE
+    45 |   0  |   0  |   0  |   0  |   1  |   1  | 
+
+总计 46 个向量周期
+
+==================================================
+向量状态说明:
+  0 - 驱动低电平 (Drive Low)
+  1 - 驱动高电平 (Drive High)
+  L - 期望低电平 (Expect Low / Compare Low)
+  H - 期望高电平 (Expect High / Compare High)
+  Z - 高阻态 (Hi-Impedance)
+  X - 不关心 (Don't Care / Mask)
+==================================================

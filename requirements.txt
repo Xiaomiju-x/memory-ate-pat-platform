@@ -1,0 +1,2 @@
+# Reproducible runtime dependency for the CustomTkinter desktop interface.
+customtkinter==6.0.0

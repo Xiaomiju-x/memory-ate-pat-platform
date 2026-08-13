@@ -1,0 +1,106 @@
+// AT24C02 Level Configuration File
+// Generated: 2026-03-25 19:58:57
+// Voltage Preset: VCC=5.0V
+// Tool: EEPROM PAT Generator v8.0.0
+
+@@LEVEL_SET_DEFINE DC_0V_PWR
+
+   VCC:    {FORCE_MODE = FORCE_V}
+           {FORCE = 0V}
+           {CLAMP = 200MA}
+           {DELAY = 3MS}
+           {I_RANGE = I4}
+           {CONTROL = CONNECT}
+
+ ALLPINS:  {MODE = NORMAL}
+           {VIH = 0V}
+           {VIL = 0V}
+           {VTT = 0V}
+           {VOH = 0V}
+           {VOL = 0V}
+           {FORCE_MODE = FORCE_V}
+           {FORCE = 0.0V}
+           {DELAY = 3MS}
+           {I_RANGE = I4}
+           {CONTROL = CONNECT}
+
+
+
+@@END_LEVEL_SET
+
+
+@@LEVEL_SET_DEFINE DC_5_0V_LVL
+
+   VCC:    {FORCE_MODE = FORCE_V}
+           {FORCE = 5.0V}
+           {CLAMP = 200MA}
+           {DELAY = 10MS}
+           {I_RANGE = I4}
+           {CONTROL = CONNECT_NO_CHANGE}
+
+ALLPINS:   {MODE = NORMAL}
+           {DELAY = 40MS}
+           {VIH = 3.5V}
+           {VIL = 1.5V}
+           {VTT = 5.0V}
+           {VOH = 2.4V}
+           {VOL = 0.4V}
+
+@@END_LEVEL_SET
+
+
+@@LEVEL_SET_DEFINE DC_IIH_IIL_LVL
+
+   VCC:    {FORCE_MODE = FORCE_V}
+           {FORCE = 5.0V}
+           {CLAMP = 5mA}
+           {DELAY = 3MS}
+           {I_RANGE = I3}
+           {CONTROL = CONNECT_NO_CHANGE}
+
+@@END_LEVEL_SET
+
+
+@@LEVEL_SET_DEFINE DC_IDD
+
+   VCC:    {FORCE_MODE = FORCE_V}
+           {FORCE = 1.8V}
+           {CLAMP = 5uA}
+           {DELAY = 3MS}
+           {I_RANGE = I1}
+           {CONTROL = CONNECT_NO_CHANGE}
+
+ALLPINS:   {FORCE_MODE = FORCE_V}
+           {FORCE = 0V}
+           {I_RANGE = I1}
+           {CONTROL = CONNECT_NO_CHANGE}
+           {VIH = 0V}
+           {VIL = 0V}
+           {VOH = 0V}
+           {VOL = 0V}
+@@END_LEVEL_SET
+
+
+@@LEVEL_SET_DEFINE PWR_OFF
+
+ ALLPINS:  {MODE = NORMAL}
+           {VIH = 0V}
+           {VIL = 0V}
+           {VTT = 0V}
+           {VOH = 0V}
+           {VOL = 0V}
+           {FORCE_MODE = FORCE_V}
+           {FORCE = 0.0V}
+           {DELAY = 3MS}
+           {I_RANGE = I4}
+           {CONTROL = DISCONNECT}
+
+  VCC:     {FORCE_MODE = FORCE_V}
+           {FORCE = 0V}
+           {CLAMP = 200MA}
+           {DELAY = 3MS}
+           {I_RANGE = I4}
+           {CONTROL = DISCONNECT}
+
+
+@@END_LEVEL_SET

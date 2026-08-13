@@ -1,0 +1,100 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Local Python environments
+.venv/
+venv/
+env/
+
+# PyInstaller and packaged binaries
+build/
+dist/
+**/build/
+**/dist/
+*.exe
+*.msi
+*.pkg
+*.pyz
+*.toc
+*.manifest
+
+# Delivery archives belong in GitHub Releases, not Git history
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+credentials*.json
+service-account*.json
+secrets*.json
+.claude/
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+~$*
+
+# Local poster/export staging
+/work/
+
+# Local compatibility environment used during release checks
+/.venv/
+
+# Award image contains names of team members and advisers. Keep the prepared
+# redacted candidate local until every named person has consented to publication.
+/docs/assets/awards/southwest-first-prize-redacted.png
+
+# Local submission bundles and internal/reference material.
+# These may contain duplicated builds, author metadata, or third-party content.
+/初赛提交.exe打包文件夹/
+/复赛/
+/复赛_BY25Q40AL_PAT工具/
+/模式五/
+/需要修改的说明和参考文档v1/
+/需要修改的说明和参考文档v2/
+/checkboarad修改提示词.docx
+/软件修改3.pptx
+**/golden_templates/
+**/func_templates/
+
+# Competition/vendor documents are not cleared for redistribution.
+*.pptx
+*.docx
+*.pdf
+*.xls
+*.xlsx
+
+# Intentionally keep the canonical output/ package and team-authored historical
+# snapshots under examples/legacy/ eligible for tracking.

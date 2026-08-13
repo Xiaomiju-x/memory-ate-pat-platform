@@ -1,0 +1,677 @@
+================================================================================
+  AT24C02 PAT向量预览 - Current Address Read
+  生成时间: 2026-03-25 19:58:57
+  向量总数: 657
+================================================================================
+
+  Vec# |  A0  |  A1  |  A2  |  WP  |  SCL |  SDA | 说明
+-----------------------------------------------------------------------------------
+     0 |   0  |   0  |   0  |   0  |   1  |   1  | === FUNC: Current Address Read Test ===
+     1 |   0  |   0  |   0  |   0  |   1  |   1  | === Byte Write: addr=0x10 data=0xCA ===
+     2 |   0  |   0  |   0  |   0  |   1  |   1  | 
+     3 |   0  |   0  |   0  |   0  |   1  |   1  | START Setup
+     4 |   0  |   0  |   0  |   0  |   1  |   0  | START Condition (SDA↓)
+     5 |   0  |   0  |   0  |   0  |   0  |   0  | START Hold
+     6 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+W bit[7]
+     7 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+     8 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+     9 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+    10 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[6]
+    11 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    12 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    13 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    14 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+W bit[5]
+    15 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+    16 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+    17 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+    18 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[4]
+    19 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    20 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    21 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    22 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[3]
+    23 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    24 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    25 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    26 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[2]
+    27 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    28 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    29 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    30 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[1]
+    31 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    32 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    33 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    34 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[0]
+    35 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    36 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    37 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    38 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after DevAddr
+    39 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+    40 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+    41 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+    42 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[7]
+    43 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    44 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    45 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    46 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[6]
+    47 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    48 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    49 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    50 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[5]
+    51 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    52 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    53 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    54 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 WordAddr bit[4]
+    55 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+    56 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+    57 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+    58 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[3]
+    59 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    60 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    61 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    62 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[2]
+    63 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    64 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    65 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    66 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[1]
+    67 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    68 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    69 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    70 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[0]
+    71 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    72 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    73 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    74 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after WordAddr
+    75 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+    76 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+    77 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+    78 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[7]
+    79 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+    80 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+    81 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+    82 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[6]
+    83 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+    84 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+    85 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+    86 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Data bit[5]
+    87 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    88 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    89 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    90 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Data bit[4]
+    91 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+    92 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+    93 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+    94 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[3]
+    95 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+    96 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+    97 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+    98 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Data bit[2]
+    99 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   100 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   101 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   102 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[1]
+   103 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   104 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   105 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   106 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Data bit[0]
+   107 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   108 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   109 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   110 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after Data
+   111 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   112 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   113 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   114 |   0  |   0  |   0  |   0  |   0  |   0  | STOP Setup
+   115 |   0  |   0  |   0  |   0  |   1  |   0  | STOP (SCL↑)
+   116 |   0  |   0  |   0  |   0  |   1  |   0  | STOP hold
+   117 |   0  |   0  |   0  |   0  |   1  |   1  | STOP Condition (SDA↑)
+   118 |   0  |   0  |   0  |   0  |   1  |   1  | === ACK Polling (wait for write cycle) ===
+   119 |   0  |   0  |   0  |   0  |   1  |   1  | 
+   120 |   0  |   0  |   0  |   0  |   1  |   1  | START Setup
+   121 |   0  |   0  |   0  |   0  |   1  |   0  | START Condition (SDA↓)
+   122 |   0  |   0  |   0  |   0  |   0  |   0  | START Hold
+   123 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Poll attempt 0 bit[7]
+   124 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   125 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   126 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   127 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[6]
+   128 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   129 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   130 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   131 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Poll attempt 0 bit[5]
+   132 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   133 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   134 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   135 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[4]
+   136 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   137 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   138 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   139 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[3]
+   140 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   141 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   142 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   143 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[2]
+   144 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   145 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   146 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   147 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[1]
+   148 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   149 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   150 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   151 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[0]
+   152 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   153 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   154 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   155 |   0  |   0  |   0  |   0  |   0  |   Z  | Poll NACK (device busy, attempt 0)
+   156 |   0  |   0  |   0  |   0  |   1  |   H  | NACK check (expect HIGH)
+   157 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   158 |   0  |   0  |   0  |   0  |   0  |   0  | STOP Setup
+   159 |   0  |   0  |   0  |   0  |   1  |   0  | STOP (SCL↑)
+   160 |   0  |   0  |   0  |   0  |   1  |   0  | STOP hold
+   161 |   0  |   0  |   0  |   0  |   1  |   1  | STOP Condition (SDA↑)
+   162 |   0  |   0  |   0  |   0  |   1  |   1  | Poll interval
+   163 |   0  |   0  |   0  |   0  |   1  |   1  | 
+   164 |   0  |   0  |   0  |   0  |   1  |   1  | START Setup
+   165 |   0  |   0  |   0  |   0  |   1  |   0  | START Condition (SDA↓)
+   166 |   0  |   0  |   0  |   0  |   0  |   0  | START Hold
+   167 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Poll attempt 1 bit[7]
+   168 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   169 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   170 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   171 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[6]
+   172 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   173 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   174 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   175 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Poll attempt 1 bit[5]
+   176 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   177 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   178 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   179 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[4]
+   180 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   181 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   182 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   183 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[3]
+   184 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   185 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   186 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   187 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[2]
+   188 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   189 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   190 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   191 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[1]
+   192 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   193 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   194 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   195 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[0]
+   196 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   197 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   198 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   199 |   0  |   0  |   0  |   0  |   0  |   X  | Poll ACK (device ready, attempt 1)
+   200 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   201 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   202 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   203 |   0  |   0  |   0  |   0  |   0  |   0  | STOP Setup
+   204 |   0  |   0  |   0  |   0  |   1  |   0  | STOP (SCL↑)
+   205 |   0  |   0  |   0  |   0  |   1  |   0  | STOP hold
+   206 |   0  |   0  |   0  |   0  |   1  |   1  | STOP Condition (SDA↑)
+   207 |   0  |   0  |   0  |   0  |   1  |   1  | Poll interval
+   208 |   0  |   0  |   0  |   0  |   1  |   1  | 
+   209 |   0  |   0  |   0  |   0  |   1  |   1  | === Byte Write: addr=0x11 data=0xFE ===
+   210 |   0  |   0  |   0  |   0  |   1  |   1  | 
+   211 |   0  |   0  |   0  |   0  |   1  |   1  | START Setup
+   212 |   0  |   0  |   0  |   0  |   1  |   0  | START Condition (SDA↓)
+   213 |   0  |   0  |   0  |   0  |   0  |   0  | START Hold
+   214 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+W bit[7]
+   215 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   216 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   217 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   218 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[6]
+   219 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   220 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   221 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   222 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+W bit[5]
+   223 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   224 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   225 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   226 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[4]
+   227 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   228 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   229 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   230 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[3]
+   231 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   232 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   233 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   234 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[2]
+   235 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   236 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   237 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   238 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[1]
+   239 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   240 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   241 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   242 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[0]
+   243 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   244 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   245 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   246 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after DevAddr
+   247 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   248 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   249 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   250 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[7]
+   251 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   252 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   253 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   254 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[6]
+   255 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   256 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   257 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   258 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[5]
+   259 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   260 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   261 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   262 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 WordAddr bit[4]
+   263 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   264 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   265 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   266 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[3]
+   267 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   268 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   269 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   270 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[2]
+   271 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   272 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   273 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   274 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[1]
+   275 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   276 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   277 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   278 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 WordAddr bit[0]
+   279 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   280 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   281 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   282 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after WordAddr
+   283 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   284 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   285 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   286 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[7]
+   287 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   288 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   289 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   290 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[6]
+   291 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   292 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   293 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   294 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[5]
+   295 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   296 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   297 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   298 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[4]
+   299 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   300 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   301 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   302 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[3]
+   303 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   304 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   305 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   306 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[2]
+   307 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   308 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   309 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   310 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Data bit[1]
+   311 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   312 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   313 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   314 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Data bit[0]
+   315 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   316 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   317 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   318 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after Data
+   319 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   320 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   321 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   322 |   0  |   0  |   0  |   0  |   0  |   0  | STOP Setup
+   323 |   0  |   0  |   0  |   0  |   1  |   0  | STOP (SCL↑)
+   324 |   0  |   0  |   0  |   0  |   1  |   0  | STOP hold
+   325 |   0  |   0  |   0  |   0  |   1  |   1  | STOP Condition (SDA↑)
+   326 |   0  |   0  |   0  |   0  |   1  |   1  | === ACK Polling (wait for write cycle) ===
+   327 |   0  |   0  |   0  |   0  |   1  |   1  | 
+   328 |   0  |   0  |   0  |   0  |   1  |   1  | START Setup
+   329 |   0  |   0  |   0  |   0  |   1  |   0  | START Condition (SDA↓)
+   330 |   0  |   0  |   0  |   0  |   0  |   0  | START Hold
+   331 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Poll attempt 0 bit[7]
+   332 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   333 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   334 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   335 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[6]
+   336 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   337 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   338 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   339 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Poll attempt 0 bit[5]
+   340 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   341 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   342 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   343 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[4]
+   344 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   345 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   346 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   347 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[3]
+   348 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   349 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   350 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   351 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[2]
+   352 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   353 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   354 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   355 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[1]
+   356 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   357 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   358 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   359 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 0 bit[0]
+   360 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   361 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   362 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   363 |   0  |   0  |   0  |   0  |   0  |   Z  | Poll NACK (device busy, attempt 0)
+   364 |   0  |   0  |   0  |   0  |   1  |   H  | NACK check (expect HIGH)
+   365 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   366 |   0  |   0  |   0  |   0  |   0  |   0  | STOP Setup
+   367 |   0  |   0  |   0  |   0  |   1  |   0  | STOP (SCL↑)
+   368 |   0  |   0  |   0  |   0  |   1  |   0  | STOP hold
+   369 |   0  |   0  |   0  |   0  |   1  |   1  | STOP Condition (SDA↑)
+   370 |   0  |   0  |   0  |   0  |   1  |   1  | Poll interval
+   371 |   0  |   0  |   0  |   0  |   1  |   1  | 
+   372 |   0  |   0  |   0  |   0  |   1  |   1  | START Setup
+   373 |   0  |   0  |   0  |   0  |   1  |   0  | START Condition (SDA↓)
+   374 |   0  |   0  |   0  |   0  |   0  |   0  | START Hold
+   375 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Poll attempt 1 bit[7]
+   376 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   377 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   378 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   379 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[6]
+   380 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   381 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   382 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   383 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 Poll attempt 1 bit[5]
+   384 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   385 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   386 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   387 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[4]
+   388 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   389 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   390 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   391 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[3]
+   392 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   393 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   394 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   395 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[2]
+   396 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   397 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   398 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   399 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[1]
+   400 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   401 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   402 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   403 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 Poll attempt 1 bit[0]
+   404 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   405 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   406 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   407 |   0  |   0  |   0  |   0  |   0  |   X  | Poll ACK (device ready, attempt 1)
+   408 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   409 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   410 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   411 |   0  |   0  |   0  |   0  |   0  |   0  | STOP Setup
+   412 |   0  |   0  |   0  |   0  |   1  |   0  | STOP (SCL↑)
+   413 |   0  |   0  |   0  |   0  |   1  |   0  | STOP hold
+   414 |   0  |   0  |   0  |   0  |   1  |   1  | STOP Condition (SDA↑)
+   415 |   0  |   0  |   0  |   0  |   1  |   1  | Poll interval
+   416 |   0  |   0  |   0  |   0  |   1  |   1  | 
+   417 |   0  |   0  |   0  |   0  |   1  |   1  | === Random Read: addr=0x10 ===
+   418 |   0  |   0  |   0  |   0  |   1  |   1  | 
+   419 |   0  |   0  |   0  |   0  |   1  |   1  | START Setup
+   420 |   0  |   0  |   0  |   0  |   1  |   0  | START Condition (SDA↓)
+   421 |   0  |   0  |   0  |   0  |   0  |   0  | START Hold
+   422 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+W bit[7]
+   423 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   424 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   425 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   426 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[6]
+   427 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   428 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   429 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   430 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+W bit[5]
+   431 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   432 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   433 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   434 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[4]
+   435 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   436 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   437 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   438 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[3]
+   439 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   440 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   441 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   442 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[2]
+   443 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   444 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   445 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   446 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[1]
+   447 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   448 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   449 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   450 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+W bit[0]
+   451 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   452 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   453 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   454 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after DevAddr
+   455 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   456 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   457 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   458 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[7]
+   459 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   460 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   461 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   462 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[6]
+   463 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   464 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   465 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   466 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[5]
+   467 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   468 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   469 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   470 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 WordAddr bit[4]
+   471 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   472 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   473 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   474 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[3]
+   475 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   476 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   477 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   478 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[2]
+   479 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   480 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   481 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   482 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[1]
+   483 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   484 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   485 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   486 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 WordAddr bit[0]
+   487 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   488 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   489 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   490 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after WordAddr
+   491 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   492 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   493 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   494 |   0  |   0  |   0  |   0  |   0  |   1  | RepSTART: SDA↑
+   495 |   0  |   0  |   0  |   0  |   1  |   1  | RepSTART: SCL↑
+   496 |   0  |   0  |   0  |   0  |   1  |   0  | RepSTART: SDA↓
+   497 |   0  |   0  |   0  |   0  |   0  |   0  | RepSTART: SCL↓
+   498 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+R bit[7]
+   499 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   500 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   501 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   502 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R bit[6]
+   503 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   504 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   505 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   506 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+R bit[5]
+   507 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   508 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   509 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   510 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R bit[4]
+   511 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   512 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   513 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   514 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R bit[3]
+   515 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   516 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   517 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   518 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R bit[2]
+   519 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   520 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   521 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   522 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R bit[1]
+   523 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   524 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   525 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   526 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+R bit[0]
+   527 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   528 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   529 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   530 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after DevAddr+R
+   531 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   532 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   533 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   534 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit ReadData bit[7]
+   535 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   536 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   537 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   538 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit ReadData bit[6]
+   539 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   540 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   541 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   542 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit ReadData bit[5]
+   543 |   0  |   0  |   0  |   0  |   1  |   L  | SCL↑ (compare=L)
+   544 |   0  |   0  |   0  |   0  |   1  |   L  | SCL high hold
+   545 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   546 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit ReadData bit[4]
+   547 |   0  |   0  |   0  |   0  |   1  |   L  | SCL↑ (compare=L)
+   548 |   0  |   0  |   0  |   0  |   1  |   L  | SCL high hold
+   549 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   550 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit ReadData bit[3]
+   551 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   552 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   553 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   554 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit ReadData bit[2]
+   555 |   0  |   0  |   0  |   0  |   1  |   L  | SCL↑ (compare=L)
+   556 |   0  |   0  |   0  |   0  |   1  |   L  | SCL high hold
+   557 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   558 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit ReadData bit[1]
+   559 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   560 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   561 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   562 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit ReadData bit[0]
+   563 |   0  |   0  |   0  |   0  |   1  |   L  | SCL↑ (compare=L)
+   564 |   0  |   0  |   0  |   0  |   1  |   L  | SCL high hold
+   565 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   566 |   0  |   0  |   0  |   0  |   0  |   1  | NACK (end read)
+   567 |   0  |   0  |   0  |   0  |   1  |   1  | NACK (SDA=HIGH)
+   568 |   0  |   0  |   0  |   0  |   1  |   1  | NACK hold
+   569 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   570 |   0  |   0  |   0  |   0  |   0  |   0  | STOP Setup
+   571 |   0  |   0  |   0  |   0  |   1  |   0  | STOP (SCL↑)
+   572 |   0  |   0  |   0  |   0  |   1  |   0  | STOP hold
+   573 |   0  |   0  |   0  |   0  |   1  |   1  | STOP Condition (SDA↑)
+   574 |   0  |   0  |   0  |   0  |   1  |   1  | === Current Address Read ===
+   575 |   0  |   0  |   0  |   0  |   1  |   1  | 
+   576 |   0  |   0  |   0  |   0  |   1  |   1  | START Setup
+   577 |   0  |   0  |   0  |   0  |   1  |   0  | START Condition (SDA↓)
+   578 |   0  |   0  |   0  |   0  |   0  |   0  | START Hold
+   579 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+R (Current Addr Read) bit[7]
+   580 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   581 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   582 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   583 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R (Current Addr Read) bit[6]
+   584 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   585 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   586 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   587 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+R (Current Addr Read) bit[5]
+   588 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   589 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   590 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   591 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R (Current Addr Read) bit[4]
+   592 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   593 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   594 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   595 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R (Current Addr Read) bit[3]
+   596 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   597 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   598 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   599 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R (Current Addr Read) bit[2]
+   600 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   601 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   602 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   603 |   0  |   0  |   0  |   0  |   0  |   0  | Write bit=0 DevAddr+R (Current Addr Read) bit[1]
+   604 |   0  |   0  |   0  |   0  |   1  |   0  | SCL↑ (data valid)
+   605 |   0  |   0  |   0  |   0  |   1  |   0  | SCL high hold
+   606 |   0  |   0  |   0  |   0  |   0  |   0  | SCL↓
+   607 |   0  |   0  |   0  |   0  |   0  |   1  | Write bit=1 DevAddr+R (Current Addr Read) bit[0]
+   608 |   0  |   0  |   0  |   0  |   1  |   1  | SCL↑ (data valid)
+   609 |   0  |   0  |   0  |   0  |   1  |   1  | SCL high hold
+   610 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   611 |   0  |   0  |   0  |   0  |   0  |   X  | ACK after DevAddr+R
+   612 |   0  |   0  |   0  |   0  |   1  |   L  | ACK check (expect LOW)
+   613 |   0  |   0  |   0  |   0  |   1  |   L  | ACK hold
+   614 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   615 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit CurrentAddrRead data bit[7]
+   616 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   617 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   618 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   619 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit CurrentAddrRead data bit[6]
+   620 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   621 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   622 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   623 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit CurrentAddrRead data bit[5]
+   624 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   625 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   626 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   627 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit CurrentAddrRead data bit[4]
+   628 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   629 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   630 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   631 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit CurrentAddrRead data bit[3]
+   632 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   633 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   634 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   635 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit CurrentAddrRead data bit[2]
+   636 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   637 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   638 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   639 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit CurrentAddrRead data bit[1]
+   640 |   0  |   0  |   0  |   0  |   1  |   H  | SCL↑ (compare=H)
+   641 |   0  |   0  |   0  |   0  |   1  |   H  | SCL high hold
+   642 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   643 |   0  |   0  |   0  |   0  |   0  |   X  | Read bit CurrentAddrRead data bit[0]
+   644 |   0  |   0  |   0  |   0  |   1  |   L  | SCL↑ (compare=L)
+   645 |   0  |   0  |   0  |   0  |   1  |   L  | SCL high hold
+   646 |   0  |   0  |   0  |   0  |   0  |   X  | SCL↓
+   647 |   0  |   0  |   0  |   0  |   0  |   1  | NACK (end current addr read)
+   648 |   0  |   0  |   0  |   0  |   1  |   1  | NACK (SDA=HIGH)
+   649 |   0  |   0  |   0  |   0  |   1  |   1  | NACK hold
+   650 |   0  |   0  |   0  |   0  |   0  |   1  | SCL↓
+   651 |   0  |   0  |   0  |   0  |   0  |   0  | STOP Setup
+   652 |   0  |   0  |   0  |   0  |   1  |   0  | STOP (SCL↑)
+   653 |   0  |   0  |   0  |   0  |   1  |   0  | STOP hold
+   654 |   0  |   0  |   0  |   0  |   1  |   1  | STOP Condition (SDA↑)
+   655 |   0  |   0  |   0  |   0  |   1  |   1  | === Current Address Read Test Complete ===
+   656 |   0  |   0  |   0  |   0  |   1  |   1  | 
+
+总计 657 个向量周期
+
+==================================================
+向量状态说明:
+  0 - 驱动低电平 (Drive Low)
+  1 - 驱动高电平 (Drive High)
+  L - 期望低电平 (Expect Low / Compare Low)
+  H - 期望高电平 (Expect High / Compare High)
+  Z - 高阻态 (Hi-Impedance)
+  X - 不关心 (Don't Care / Mask)
+==================================================

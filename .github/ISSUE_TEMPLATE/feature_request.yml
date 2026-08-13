@@ -1,0 +1,44 @@
+name: "Feature request / 功能建议"
+description: "建议新的测试算法、芯片、格式或工作流"
+title: "[Feature] "
+labels:
+  - "enhancement"
+  - "needs-triage"
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "问题与使用场景 / Problem and use case"
+      description: "说明当前限制、实际用户和希望达成的结果。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "建议方案 / Proposed solution"
+      description: "说明协议、输入输出、边界条件和兼容性。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "替代方案 / Alternatives"
+      description: "你已经尝试过哪些方案？"
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: "验收与验证 / Acceptance and verification"
+      description: "怎样判断功能正确？是否有公开规范、clean-room 样例或硬件条件？"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: "资料合规 / Rights"
+      options:
+        - label: "建议不依赖未经授权的赛方/企业资料；引用内容有公开来源和许可依据。"
+          required: true

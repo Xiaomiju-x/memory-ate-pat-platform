@@ -1,0 +1,56 @@
+// AT24C02 Level Configuration File
+// Generated: 2026-03-22 10:17:56
+// Voltage Preset: VCC=5.0V
+// Tool: EEPROM PAT Generator v6.0.0
+
+LEVEL_SET level_5v {
+
+    // DPS (Device Power Supply)
+    DPS1 {    // VCC (Pin 8)
+        VForce = 5.0V;
+        IClampH = 100mA;
+        IClampL = -10mA;
+    }
+    DPS_GND { // GND (Pin 4)
+        VForce = 0V;
+    }
+
+    // Digital pin levels
+    CH01 {  // A0 (Address Input)
+        VIH = 3.5V;  VIL = 1.5V;
+        VOH = 2.4V;  VOL = 0.4V;
+        IOL = 3.0mA;
+        VCLH = 6.0V; VCLL = -0.3V;
+    }
+    CH02 {  // A1 (Address Input)
+        VIH = 3.5V;  VIL = 1.5V;
+        VOH = 2.4V;  VOL = 0.4V;
+        IOL = 3.0mA;
+        VCLH = 6.0V; VCLL = -0.3V;
+    }
+    CH03 {  // A2 (Address Input)
+        VIH = 3.5V;  VIL = 1.5V;
+        VOH = 2.4V;  VOL = 0.4V;
+        IOL = 3.0mA;
+        VCLH = 6.0V; VCLL = -0.3V;
+    }
+    CH04 {  // SDA (Bidirectional, Open-Drain)
+        VIH = 3.5V;  VIL = 1.5V;
+        VOH = 2.4V;  VOL = 0.4V;
+        IOL = 3.0mA;
+        VCLH = 6.0V; VCLL = -0.3V;
+        // Note: SDA is open-drain, external pull-up required
+    }
+    CH05 {  // SCL (Clock Input)
+        VIH = 3.5V;  VIL = 1.5V;
+        VOH = 2.4V;  VOL = 0.4V;
+        IOL = 3.0mA;
+        VCLH = 6.0V; VCLL = -0.3V;
+    }
+    CH06 {  // WP (Write Protect)
+        VIH = 3.5V;  VIL = 1.5V;
+        VOH = 2.4V;  VOL = 0.4V;
+        IOL = 3.0mA;
+        VCLH = 6.0V; VCLL = -0.3V;
+    }
+}

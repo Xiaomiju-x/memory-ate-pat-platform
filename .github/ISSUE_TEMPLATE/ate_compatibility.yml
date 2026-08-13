@@ -1,0 +1,62 @@
+name: "ATE compatibility / ATE 兼容性"
+description: "报告公开可讨论的 PAT/TIM/LVL/PRG 兼容问题"
+title: "[ATE] "
+labels:
+  - "compatibility"
+  - "needs-triage"
+body:
+  - type: input
+    id: platform
+    attributes:
+      label: "ATE 平台与公开版本 / Platform"
+      description: "只填写可公开的信息，不要披露设备序列号或内部环境。"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: format
+    attributes:
+      label: "文件格式 / Format"
+      options:
+        - "PAT"
+        - "PRG"
+        - "TIM"
+        - "LVL"
+        - "STIL"
+        - "WGL"
+        - "STDF"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: mismatch
+    attributes:
+      label: "最小兼容性差异 / Minimal mismatch"
+      description: "提供自行构造的最小片段、公开错误码和预期语法。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: public_reference
+    attributes:
+      label: "公开依据 / Public reference"
+      description: "提供公开文档链接和页码；不要上传私有手册或赛事附件。"
+
+  - type: textarea
+    id: safety
+    attributes:
+      label: "硬件验证与安全边界 / Hardware verification"
+      description: "说明是否仅解析、离线仿真或已在受控条件运行。"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "提交前确认 / Checklist"
+      options:
+        - label: "片段已脱敏，不含真实项目、器件批次、序列号或生产数据。"
+          required: true
+        - label: "未附加未经授权的 ATE/赛方/企业资料。"
+          required: true

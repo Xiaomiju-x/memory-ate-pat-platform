@@ -1,0 +1,2 @@
+# Reproducible Windows executable builds.
+pyinstaller==6.22.0

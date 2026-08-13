@@ -1,0 +1,188 @@
+def get_flowchart_html(nodes_js):
+    return f"""<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>流程图模拟</title>
+<style>
+body{{background:#1a1a2e;color:#eee;font-family:Arial;margin:0;padding:20px;display:flex;gap:16px}}
+.main{{flex:1;min-width:0}}
+.toolbar{{margin-bottom:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}}
+.run-btn{{background:#4dabf7;color:#000;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;font-weight:bold}}
+.run-btn:hover{{background:#74c0fc}}
+.ctrl-btn{{background:#2d2d44;color:#eee;border:1px solid #555;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px}}
+.ctrl-btn:hover{{background:#3d3d5a}}
+label{{font-size:13px;color:#aaa}}
+input[type=range]{{width:100px;accent-color:#4dabf7}}
+.node-wrap{{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin-bottom:16px}}
+.flow-line{{stroke-dashoffset:100;animation:flow 1s linear infinite}}
+@keyframes flow{{to{{stroke-dashoffset:0}}}}
+.node{{border:2px solid #555;border-radius:8px;padding:12px 18px;cursor:pointer;transition:all 0.3s;position:relative;min-width:100px;text-align:center;font-size:13px}}
+.node-label{{font-weight:bold;font-size:14px;margin-bottom:4px}}
+.node-info{{font-size:11px;color:#aaa}}
+.node-bin{{position:absolute;top:4px;right:8px;font-size:10px;color:#ffd43b;font-weight:bold}}
+.node-active{{border-color:#4dabf7 !important;box-shadow:0 0 20px #4dabf7,0 0 40px #4dabf755;transform:scale(1.05)}}
+.node-done{{border-color:#2d9e4f;box-shadow:0 0 6px #2d9e4f55}}
+.node-end{{animation:ripple 1.2s ease-out forwards}}
+@keyframes ripple{{0%{{box-shadow:0 0 0 0 #2d9e4faa,0 0 20px #2d9e4f}}50%{{box-shadow:0 0 0 20px #2d9e4f22,0 0 30px #2d9e4f}}100%{{box-shadow:0 0 0 40px transparent,0 0 8px #2d9e4f55}}}}
+.node-start{{animation:pulse-green 2s ease-in-out infinite}}
+@keyframes pulse-green{{0%,100%{{box-shadow:0 0 8px rgba(45,173,45,.3)}}50%{{box-shadow:0 0 24px 6px rgba(45,173,45,.6)}}}}
+.node-fail{{animation:pulse-red 2s ease-in-out infinite}}
+@keyframes pulse-red{{0%,100%{{box-shadow:0 0 8px rgba(173,45,45,.3)}}50%{{box-shadow:0 0 24px 6px rgba(173,45,45,.6)}}}}
+.spinner{{display:none;width:12px;height:12px;border:2px solid #ffffff44;border-top-color:#4dabf7;border-radius:50%;animation:spin 0.6s linear infinite;position:absolute;top:4px;left:6px}}
+@keyframes spin{{to{{transform:rotate(360deg)}}}}
+.log-panel{{background:#0d0d1a;border:1px solid #333;border-radius:6px;padding:10px;height:140px;overflow-y:auto;font-size:12px;font-family:monospace}}
+.log-run{{color:#4dabf7}}.log-ok{{color:#2d9e4f}}.log-end{{color:#ffd43b}}.log-step{{color:#cc99ff}}
+.detail-panel{{width:260px;flex-shrink:0;position:sticky;top:20px;align-self:flex-start;background:#0d0d1a;border:1px solid #333;border-radius:8px;padding:16px;font-size:13px;display:none}}
+.detail-panel h3{{margin:0 0 10px;font-size:15px;color:#4dabf7}}
+.detail-row{{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #222}}
+.detail-row .dk{{color:#888}}.detail-row .dv{{color:#eee;font-weight:bold}}
+</style></head>
+<body>
+<div class="main">
+<div class="toolbar">
+  <button class="run-btn" id="runBtn" onclick="runSim()">▶ 运行模拟</button>
+  <button class="ctrl-btn" onclick="stepOnce()">⏭ 单步</button>
+  <button class="ctrl-btn" onclick="resetSim()">↺ 重置</button>
+  <button class="ctrl-btn" onclick="document.documentElement.requestFullscreen()">⛶ 全屏</button>
+  <label>速度:
+    <input type="range" id="speed" min="1" max="3" value="2">
+    <span id="speedLabel">中</span>
+  </label>
+</div>
+<div class="node-wrap" id="nodes"></div>
+<div class="log-panel" id="log"></div>
+</div>
+<div class="detail-panel" id="detail">
+  <h3 id="detTitle">节点详情</h3>
+  <div class="detail-row"><span class="dk">标签</span><span class="dv" id="detLabel">-</span></div>
+  <div class="detail-row"><span class="dk">向量数</span><span class="dv" id="detVec">-</span></div>
+  <div class="detail-row"><span class="dk">耗时</span><span class="dv" id="detTime">-</span></div>
+  <div class="detail-row"><span class="dk">Fail动作</span><span class="dv" id="detFail">-</span></div>
+</div>
+<script>
+const data={nodes_js};
+const speedMap={{1:1000,2:500,3:150}};
+const speedName={{1:'慢',2:'中',3:'快'}};
+const gradMap={{
+  'OS':'linear-gradient(135deg,#1c3f6e,#2d6aad)',
+  'DC':'linear-gradient(135deg,#6e3a1c,#ad6e2d)',
+  'FUNC':'linear-gradient(135deg,#1c6e3a,#2dad5a)',
+  'MARCH':'linear-gradient(135deg,#4a1c6e,#7a2dad)',
+  'START':'linear-gradient(135deg,#1c6e1c,#2dad2d)',
+  'END':'linear-gradient(135deg,#6e1c1c,#ad2d2d)'
+}};
+let stepIdx=0,running=false,timer=null;
+document.getElementById('speed').oninput=function(){{
+  document.getElementById('speedLabel').textContent=speedName[this.value];
+}};
+const container=document.getElementById('nodes');
+const log=document.getElementById('log');
+const detPanel=document.getElementById('detail');
+function getType(n){{
+  const lb=(n.label||'').toUpperCase();
+  const id=(n.id||'').toUpperCase();
+  if(lb==='START'||id==='START') return 'START';
+  if(lb==='END'||id==='END') return 'END';
+  for(const k of ['OS','DC','FUNC','MARCH']) if(lb.indexOf(k)>=0||id.indexOf(k)>=0) return k;
+  return '';
+}}
+function showDetail(n){{
+  detPanel.style.display='block';
+  document.getElementById('detTitle').textContent=n.label||'-';
+  document.getElementById('detLabel').textContent=n.label||'-';
+  document.getElementById('detVec').textContent=n.vec!=null?n.vec.toLocaleString()+' 向量':'-';
+  document.getElementById('detTime').textContent=n.time!=null?n.time+' ms':'-';
+  document.getElementById('detFail').textContent=n.fail_action||'Bin Out';
+}}
+data.forEach((n,i)=>{{
+  const d=document.createElement('div');
+  const tp=getType(n);
+  const bg=gradMap[tp]||'#2d2d44';
+  d.className='node'+(tp==='START'?' node-start':tp==='END'?' node-fail':'');
+  d.id='n'+i;
+  d.style.background=bg;
+  let inner='<span class="spinner" id="sp'+i+'"></span>';
+  inner+='<div class="node-label">'+n.label+'</div>';
+  if(n.vec!=null||n.time!=null){{
+    const parts=[];
+    if(n.vec!=null) parts.push(n.vec.toLocaleString()+' 向量');
+    if(n.time!=null) parts.push(n.time+' ms');
+    inner+='<div class="node-info">'+parts.join(' / ')+'</div>';
+  }}
+  if(n.bin!=null) inner+='<div class="node-bin">Bin '+n.bin+'</div>';
+  d.innerHTML=inner;
+  d.onclick=function(){{showDetail(n);}};
+  container.appendChild(d);
+  if(i<data.length-1){{
+    const sv=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    sv.setAttribute('width','4');sv.setAttribute('height','40');
+    sv.style.marginLeft='48px';
+    const ln=document.createElementNS('http://www.w3.org/2000/svg','line');
+    ln.setAttribute('x1','2');ln.setAttribute('y1','0');
+    ln.setAttribute('x2','2');ln.setAttribute('y2','40');
+    ln.setAttribute('stroke','#2d9e4f');ln.setAttribute('stroke-width','2');
+    ln.setAttribute('stroke-dasharray','6,4');ln.setAttribute('class','flow-line');
+    sv.appendChild(ln);container.appendChild(sv);
+  }}
+}});
+function addLog(msg,cls){{
+  const p=document.createElement('p');
+  p.className=cls; p.style.margin='2px 0';
+  p.textContent='['+new Date().toLocaleTimeString()+'] '+msg;
+  log.appendChild(p); log.scrollTop=log.scrollHeight;
+}}
+function setActive(i){{
+  const el=document.getElementById('n'+i);
+  el.className='node node-active';
+  document.getElementById('sp'+i).style.display='inline-block';
+  el.scrollIntoView({{behavior:'smooth',block:'nearest'}});
+  showDetail(data[i]);
+}}
+function setDone(i,isEnd){{
+  const el=document.getElementById('n'+i);
+  el.className='node '+(isEnd?'node-done node-end':'node-done');
+  document.getElementById('sp'+i).style.display='none';
+}}
+function runSim(){{
+  if(running)return;
+  resetSim(); running=true;
+  document.getElementById('runBtn').textContent='⏸ 运行中';
+  addLog('开始模拟执行...','log-run');
+  function step(){{
+    if(stepIdx>=data.length){{finish();return;}}
+    if(stepIdx>0) setDone(stepIdx-1,false);
+    setActive(stepIdx);
+    addLog('执行: '+data[stepIdx].label,'log-run');
+    stepIdx++;
+    const spd=parseInt(document.getElementById('speed').value);
+    timer=setTimeout(step,speedMap[spd]);
+  }}
+  step();
+}}
+function stepOnce(){{
+  if(running)return;
+  if(stepIdx>=data.length){{resetSim();return;}}
+  if(stepIdx>0) setDone(stepIdx-1,false);
+  setActive(stepIdx);
+  addLog('单步: '+data[stepIdx].label,'log-step');
+  stepIdx++;
+  if(stepIdx>=data.length) setTimeout(finish,400);
+}}
+function finish(){{
+  running=false;
+  if(stepIdx>0) setDone(stepIdx-1,true);
+  document.getElementById('runBtn').textContent='▶ 运行模拟';
+  addLog('✓ 全部节点执行完成','log-end');
+}}
+function resetSim(){{
+  clearTimeout(timer); running=false; stepIdx=0;
+  document.getElementById('runBtn').textContent='▶ 运行模拟';
+  detPanel.style.display='none';
+  data.forEach((n,i)=>{{
+    const el=document.getElementById('n'+i);
+    const tp=getType(n);
+    el.className='node'+(tp==='START'?' node-start':tp==='END'?' node-fail':'');
+    document.getElementById('sp'+i).style.display='none';
+  }});
+  log.innerHTML='';
+}}
+
+</script></body></html>"""

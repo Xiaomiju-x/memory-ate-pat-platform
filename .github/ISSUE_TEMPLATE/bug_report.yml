@@ -1,0 +1,88 @@
+name: "Bug report / 缺陷报告"
+description: "报告可复现的软件、协议或生成结果错误"
+title: "[Bug] "
+labels:
+  - "bug"
+  - "needs-triage"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢报告问题。安全漏洞、凭据、个人信息或保密资料泄漏请改用 SECURITY.md 的私密渠道。
+
+  - type: input
+    id: version
+    attributes:
+      label: "版本 / Version"
+      description: "Git 提交、tag 或 Release 版本。"
+      placeholder: "例如：v1.0.0 或 commit SHA"
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: "运行环境 / Environment"
+      description: "Windows 版本、Python 版本、启动方式。"
+      placeholder: "Windows 11, Python 3.12, source"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "影响区域 / Area"
+      options:
+        - "AT24C02 / I2C"
+        - "BY25Q40AL / SPI-Dual-Quad"
+        - "PAT / PRG / TIM / LVL"
+        - "STIL / WGL / STDF"
+        - "GUI / visualization"
+        - "Build / packaging"
+        - "Documentation"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "最小复现 / Minimal reproduction"
+      description: "列出配置、操作和最小输入；不要上传保密 ATE 工程。"
+      placeholder: |
+        1. 选择...
+        2. 设置...
+        3. 点击...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "预期行为 / Expected behavior"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "实际行为 / Actual behavior"
+      description: "可附最小、脱敏的错误或向量片段。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: "验证情况 / Verification"
+      description: "是否经过解析器、仿真器或真实 ATE 验证？请说明边界。"
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "提交前确认 / Checklist"
+      options:
+        - label: "我已搜索现有 Issue，并在最新版本复现。"
+          required: true
+        - label: "内容不含密钥、个人信息、生产数据或未经授权的赛方/企业资料。"
+          required: true
