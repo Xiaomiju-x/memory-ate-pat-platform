@@ -4,7 +4,7 @@
 
 本项目为全国大学生集成电路创新创业大赛[第十届“胜达克”企业命题](https://univ.ciciec.com/nd.jsp?id=1024)开发，主题是存储类芯片自动化测试系统与 PAT 测试向量软件。
 
-团队在**西南赛区获得一等奖**。全国总决赛仍在准备中，不在此声称任何总决赛奖项。大赛官网已发布[成都工业学院赛点获奖名单公示](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)；证书是本项目奖项口径的直接材料。
+团队在**西南赛区获得一等奖**。全国总决赛已完赛，成绩预计于 **2026 年 8 月 21 日**公布；在官方结果公布前，本仓库不声称任何总决赛奖项或名次。大赛官网已发布[成都工业学院赛点获奖名单公示](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)；证书是西南赛区奖项口径的直接材料。
 
 证书已获授权公开。展示版本保留团队成员、指导教师和奖项信息，遮蔽二维码与证书编号，以减少无关标识信息的传播。
 
@@ -12,7 +12,7 @@
 
 > 图片仅用于记录团队获得西南赛区一等奖的赛事经历；上方大赛官网获奖名单提供公开赛事记录。展示不表示主办方或命题企业为本开源仓库背书。
 
-> **English:** This project was developed for the “ShengDaKe” enterprise challenge of China’s National College Student Integrated Circuit Innovation and Entrepreneurship Competition. The team received First Prize in the Southwest regional stage. The national finals are still in preparation; no finals result or completed finals software is claimed here.
+> **English:** This project was developed for the “ShengDaKe” enterprise challenge of China’s National College Student Integrated Circuit Innovation and Entrepreneurship Competition. The team received First Prize in the Southwest regional stage. The national finals have concluded; results are expected on August 21, 2026, and no finals award or placement is claimed before the official announcement. The national-finals PAT platform v1.0.9 is open source.
 
 ## 三个阶段，三种工程重点
 
@@ -53,17 +53,25 @@
 
 比赛现场内部版本曾在获授权环境运行 30 项回归；公开版因合规不附赛方黄金 PAT、FUNC 参考模板或其他第三方赛事资料，因此公开 CI 不代表私有参考语料的逐字节验证。这套工具的“优化”主要指对赛题输入、指定芯片和现场交付流程的针对性约束，不代表对所有 SPI Flash 或所有 ATE 的普遍最优。
 
-### 全国总决赛：准备中
+### 全国总决赛：软件 v1.0.9 已开源，成绩待公布
 
-决赛 PAT 向量生成测试软件仍在开发。当前公开仓库只保留以下位置和原则：
+决赛阶段形成了独立的多器件 PAT 生成软件平台，当前公开内容包括：
 
-- 在需求确认、资料可公开、回归可复现后再提交代码；
-- 新增器件或方言时明确数据手册版本与测试条件；
-- 将参考输入、参数化引擎、验证器和交付样例分开管理；
-- 先建立回归契约，再宣称某项能力“完成”；
-- 不提前公开赛方限制传播、个人隐私或第三方未授权材料。
+- Windows 10/11 x64 离线 Electron 桌面应用；
+- 固定/自定义 SPI Flash、23LC1024 SRAM、24LC02B I²C EEPROM、25LC256 SPI EEPROM；
+- MEMORY / FUNC、SPI / SDI / SQI、数据模式、地址范围和自定义事务；
+- 普通 PAT 编辑、校验、整列替换和原生保存；
+- 超大 PAT 的协作式生成、取消、磁盘流式存储与分段预览；
+- 19 项 Node 单元/完整性测试和 31 项 Electron 交互/生成回归；
+- 锁定依赖、第三方许可、Windows 构建脚本和带 SHA-256 的 Release。
 
-决赛进展以[路线图](roadmap.md)为准。`准备中` 不等于已经实现，也不构成结果承诺。
+公开入口：
+
+- [`national-final/`](../national-final/)
+- [`national-final/README.md`](../national-final/README.md)
+- [`national-final-v1.0.9` Release](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9)
+
+软件基线已发布，但比赛成绩尚未公布，EXE 也未使用商业代码签名。公开测试覆盖软件结构与协议契约，不替代目标 ATE 导入、真实器件、负载板、电平时序和设备安全签核。内部参考 PAT、厂商资料和其他无公开再分发权的内容不随仓库发布。
 
 ## 代码与算法职责
 

@@ -9,6 +9,7 @@
 - Windows 10 / 11；
 - Python 3.10+；
 - 可用的 `tkinter`（python.org 的 Windows 安装包通常包含）；
+- Node.js 22.12.0（仅运行/测试/构建决赛源码时需要；便携 EXE 不需要）；
 - Git。
 
 克隆并创建隔离环境：
@@ -160,7 +161,25 @@ python "regional-final\by25q40al\by25q40al_pat_generator.py" `
 
 更多竞赛专用规则见[复赛软件使用说明](../regional-final/by25q40al/README.md)。
 
-## 4. 运行测试
+## 4. 运行全国总决赛 PAT 平台
+
+最省事的使用方式是从 [`national-final-v1.0.9` Release](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9) 下载 Windows 10/11 x64 便携版。它不需要安装 Python、Node.js 或 Electron；EXE 未做商业代码签名，Windows SmartScreen 可能显示“未知发布者”，请先核对发布页 SHA-256。
+
+从源码运行：
+
+```powershell
+Push-Location national-final
+npm ci
+npm test
+npm run start
+Pop-Location
+```
+
+决赛平台覆盖固定/自定义 SPI Flash、23LC1024 SRAM、24LC02B I²C EEPROM、25LC256 SPI EEPROM，以及 MEMORY/FUNC、SPI/SDI/SQI、普通预览和超大 PAT 流式生成。完整能力、已知限制和安全设计见[决赛平台说明](../national-final/README.md)。
+
+全国总决赛已完赛，成绩预计于 2026 年 8 月 21 日公布。软件 v1.0.9 的开源发布不代表任何总决赛奖项、主办方认证或目标 ATE 真机签核。
+
+## 5. 运行测试
 
 根平台测试：
 
@@ -180,11 +199,22 @@ Pop-Location
 
 回归失败时不要继续构建或发布 EXE。公开测试检查团队生成器、事务结构、地址边界、总线映射和打包配置，不附带或读取赛方原始黄金 PAT、FUNC 参考模板等第三方资产。
 
+决赛平台测试必须从其项目目录执行：
+
+```powershell
+Push-Location national-final
+npm ci
+npm test
+Pop-Location
+```
+
+其中包含 19 项 Node 单元/完整性测试和 31 项 Electron 交互/生成回归；内部参考 PAT、厂商文档及其哈希不是公开测试输入。
+
 ### 第三方资料不属于公开复现输入
 
 公开生成器、测试与构建不需要赛方黄金 PAT、FUNC 模板或其他第三方赛事资料。合法持有相关资料者只能在授权范围内自行离线核验；本项目不接收、不定位、不自动读取或提供相关资产，也不提供其哈希、复制或对比工具。私有核验不属于公开复现步骤。不要向维护者提交资产正文、路径、哈希或可用于还原资产的信息。
 
-## 5. Windows 打包
+## 6. Windows 打包
 
 先安装构建依赖：
 
@@ -210,7 +240,17 @@ Pop-Location
 
 构建产物位于对应目录的 `dist/`。可执行文件是派生物；发布时应同时提供源码版本、测试状态和 SHA-256，而不是只提交 EXE。
 
-## 6. 复现与输出检查
+决赛 Electron 平台使用锁定的 Node/npm/Electron 依赖：
+
+```powershell
+Push-Location national-final
+.\build.bat
+Pop-Location
+```
+
+脚本顺序执行 `npm ci`、完整测试和 portable 构建；本地输出为 `national-final\dist\PAT生成工具.exe`。`dist/` 不进入 Git 历史，正式二进制只通过 GitHub Release 发布。
+
+## 7. 复现与输出检查
 
 每次准备交付时至少记录：
 
@@ -224,7 +264,7 @@ Pop-Location
 
 主平台文件可能包含生成时间，因此同一配置的整个文件未必逐字节相同；应同时比较配置、段数、向量数和事务语义。复赛公开版的固定范围与自定义范围都走团队参数化生成器；内部获授权语料对比不是公开复现要求。
 
-## 7. 常见启动问题
+## 8. 常见启动问题
 
 | 现象 | 检查项 |
 |---|---|
@@ -234,5 +274,7 @@ Pop-Location
 | GUI 可启动但字体/缩放异常 | 检查 Windows DPI 和系统字体；先用默认缩放复现 |
 | PAT 被目标 ATE 拒绝 | 先看[格式说明](formats.md)，再按目标设备的授权格式文档校准 |
 | EXE 被安全软件提示 | 从源码自行构建并核对 SHA-256；不要把“误报”当作默认结论 |
+| `npm ci` 提示 Node 版本不满足 | 安装 Node.js 22.12.0；决赛项目的 `.nvmrc` 和 CI 使用同一版本 |
+| 决赛 EXE 显示未知发布者 | 当前 Release 未使用商业代码签名；只从项目 Release 下载并核对 SHA-256 |
 
 仍未解决时，请按 [CONTRIBUTING.md](../CONTRIBUTING.md) 的 Issue 模板提供最小复现信息。

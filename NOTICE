@@ -27,6 +27,12 @@ Runtime dependency notice: CustomTkinter is distributed separately under the
 MIT License by Tom Schimansky and contributors. It is not vendored in this
 repository; installations receive its license metadata from the Python package.
 
+The national-finals desktop application uses Electron and vendors browser
+builds of Floating UI and Lucide. Their license texts and attributions are
+provided in national-final/THIRD_PARTY_NOTICES.md and national-final/licenses/,
+and are included in the portable build. These third-party components are not
+relicensed under Apache-2.0.
+
 The redacted award certificate at
 docs/assets/awards/southwest-first-prize-redacted.png is published solely for
 factual documentation of the team award. Its certificate design, seals, and

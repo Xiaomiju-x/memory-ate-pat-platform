@@ -59,3 +59,29 @@ jobs:
       - name: Test regional-final BY25Q40AL public platform
         working-directory: ./regional-final/by25q40al
         run: python -m unittest discover -s tests -v
+
+  national-final:
+    name: Windows / Node 22 / National-final Electron platform
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    defaults:
+      run:
+        working-directory: ./national-final
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38  # v6
+        with:
+          node-version: "22.12.0"
+          cache: npm
+          cache-dependency-path: national-final/package-lock.json
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Test national-final Electron platform
+        run: npm test

@@ -9,15 +9,17 @@
 [![Platform](https://img.shields.io/badge/primary-Windows%2010%20%7C%2011-0078D4?logo=windows)](#快速开始)
 [![CI](https://github.com/Xiaomiju-x/memory-ate-pat-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Xiaomiju-x/memory-ate-pat-platform/actions/workflows/ci.yml)
 [![Competition](https://img.shields.io/badge/西南赛区-一等奖-CB2B2B)](docs/competition.md)
-[![Finals](https://img.shields.io/badge/全国总决赛-准备中-F59E0B)](docs/roadmap.md)
+[![Finals](https://img.shields.io/badge/全国总决赛软件-v1.0.9%20已开源-16A34A)](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9)
 
-![Memory ATE PAT Platform：AT24C02 初赛平台、BY25Q40AL 复赛平台与决赛准备状态](docs/assets/hero.svg)
+![Memory ATE PAT Platform：AT24C02 初赛平台、BY25Q40AL 复赛平台与全国总决赛 PAT 软件](docs/assets/hero.svg)
 
-这是一个围绕存储芯片 ATE（Automatic Test Equipment）测试开发的开源项目。仓库包含两条彼此关联、但定位不同的技术路线：
+这是一个围绕存储芯片 ATE（Automatic Test Equipment）测试开发的开源项目。仓库包含三条彼此关联、但定位不同的技术路线：
 
 - **初赛：AT24C02 完整测试平台**——从协议向量、测试方案、格式导出，到波形、流程、仿真、良率与测试数据分析的桌面工具；
 - **复赛：BY25Q40AL 竞赛优化 PAT 平台**——围绕 Standard/Dual/Quad SPI、六类 Memory 数据模式、参数化生成和格式验证构建的专用生成器；
-- **决赛：准备中**——决赛 PAT 向量生成测试软件仍在开发，本仓库只预留公开位置，不把计划中的能力描述为已完成。
+- **全国总决赛：多器件 PAT 生成软件平台**——Electron 离线桌面版，覆盖 SPI Flash、SRAM、I²C EEPROM、SPI EEPROM，支持 MEMORY/FUNC、SPI/SDI/SQI、超大 PAT 流式生成与安全预览；`v1.0.9` 源码和 Windows x64 便携版已发布。
+
+全国总决赛已经完赛，成绩预计于 **2026 年 8 月 21 日**公布。当前仓库不提前声明任何全国总决赛奖项或名次；成绩公布后将单独更新赛事结果材料。
 
 项目获得全国大学生集成电路创新创业大赛「胜达克」企业命题**西南赛区一等奖**。奖项属于参赛团队；仓库维护者主要负责代码与算法、初赛平台搭建，以及复赛和决赛阶段面向竞赛约束的 PAT 软件开发。
 
@@ -27,7 +29,7 @@
 
 > 证书用于记录参赛团队获得西南赛区一等奖；[大赛官网获奖名单](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)提供了公开赛事记录。赛事名称、印章和相关标识归各自权利人所有，展示不表示主办方或命题企业为本开源仓库背书。
 
-> **English summary:** An open-source memory-device ATE/PAT generation project developed for the “ShengDaKe” enterprise challenge of the National College Student Integrated Circuit Innovation and Entrepreneurship Competition. It contains the completed AT24C02 preliminary-round platform and the competition-tuned BY25Q40AL regional-round generator. The national-finals software is still in preparation and is intentionally not presented as complete. Documentation is Chinese-first; commands, file formats, architecture diagrams, and code identifiers are English-friendly.
+> **English summary:** An open-source memory-device ATE/PAT generation project developed for the “ShengDaKe” enterprise challenge of the National College Student Integrated Circuit Innovation and Entrepreneurship Competition. It contains the AT24C02 preliminary platform, the competition-tuned BY25Q40AL regional generator, and the open-source national-finals PAT platform v1.0.9. The national finals have concluded; results are expected on August 21, 2026, and no finals award or placement is claimed before the official result. Documentation is Chinese-first; commands, file formats, architecture diagrams, and code identifiers are English-friendly.
 
 ## 目录
 
@@ -69,7 +71,7 @@ PAT 工具常常同时涉及器件协议、存储器测试算法、ATE 向量语
 |---|---|---|---|
 | 初赛 | AT24C02 I2C EEPROM 完整自动测试平台 | 根目录主程序、批量生成脚本、示例输出与分析工具 | 已完成，持续整理 |
 | 复赛（西南赛区阶段） | BY25Q40AL SPI Flash，针对竞赛约束优化 | 独立 GUI/CLI、六种 Memory 模式、格式/事务验证与公开泛化测试 | 已完成；第三方参考资产不公开 |
-| 全国总决赛 | 面向决赛要求的 PAT 向量生成测试软件 | 预留文档与后续目录 | **准备中，尚未发布完成声明** |
+| 全国总决赛 | 多器件 MEMORY/FUNC PAT 生成、超大文件流式处理 | Electron 源码、测试、可复现构建与 Windows x64 Release | **软件 v1.0.9 已开源；成绩待公布** |
 
 阶段背景、奖项口径和个人分工见[竞赛历程](docs/competition.md)。
 
@@ -98,6 +100,19 @@ PAT 工具常常同时涉及器件协议、存储器测试算法、ATE 向量语
 - 第三方资产不随仓库分发，也不是公开生成、测试或构建流程的输入。
 
 复赛工具不是通用平台的“皮肤”，而是一套以竞赛方言一致性和可回归交付为优先级的独立实现。详细操作见[复赛软件使用说明](regional-final/by25q40al/README.md)。
+
+### 全国总决赛 PAT 软件平台
+
+- Windows 10/11 x64 离线 Electron 桌面应用，运行时不需要 Python 或 Node.js；
+- 固定与自定义 SPI Flash，以及 23LC1024 SRAM、24LC02B I²C EEPROM、25LC256 SPI EEPROM；
+- MEMORY / FUNC 双页面，SPI / SDI / SQI、数据模式、地址范围和自定义事务配置；
+- 普通 PAT 可编辑预览、六列批量替换、校验与原生保存；
+- 超大 PAT 协作式生成、取消、磁盘流式存储和 5,000 行窗口安全预览；
+- Electron sandbox、context isolation、IPC 白名单、离线 CSP 和网络请求阻断；
+- 19 项 Node 单元/完整性测试与 31 项 Electron 交互/生成回归；
+- 完整源码、锁定依赖、第三方许可文本、构建脚本与独立 Release。
+
+源码与说明见 [`national-final/`](national-final/README.md)，Windows 便携版见 [`national-final-v1.0.9` Release](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9)。该平台仍需在目标 ATE、真实器件和授权格式环境完成设备级签核；软件发布不等于主办方认证或决赛获奖声明。
 
 ## 快速开始
 
@@ -149,6 +164,18 @@ python "regional-final\by25q40al\by25q40al_pat_generator.py" `
   --output semifinal_output
 ```
 
+运行全国总决赛平台源码（需要 Node.js 22.12.0）：
+
+```powershell
+Push-Location national-final
+npm ci
+npm test
+npm run start
+Pop-Location
+```
+
+不安装开发环境可直接从 [GitHub Release](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9) 下载 Windows x64 便携版，并按发布页核对 SHA-256。
+
 完整的安装、CLI、测试与打包说明见[快速开始](docs/quickstart.md)。
 
 ## 输出文件
@@ -184,7 +211,7 @@ memory-ate-pat-platform/
 │  ├─ by25q40al_pat_generator.py   # 复赛专用 GUI / CLI
 │  ├─ tests/                       # 团队自生成、协议与边界回归
 │  └─ README.md                    # 公开版使用与合规边界
-├─ national-final/                 # 决赛预留入口（准备中，无完成声明）
+├─ national-final/                 # 全国总决赛 Electron 平台 v1.0.9、测试与构建工程
 ├─ tests/                          # 根平台的轻量回归与导入检查
 ├─ docs/                           # 架构、复现、竞赛、格式、路线图与 FAQ
 └─ .github/                        # CI、Issue / PR 模板等开源协作配置
@@ -211,10 +238,10 @@ memory-ate-pat-platform/
 |---|---|
 | [快速开始](docs/quickstart.md) | 安装、GUI、CLI、测试、打包与复现 |
 | [架构说明](docs/architecture.md) | 分层结构、数据模型、生成链路与模块边界 |
-| [竞赛历程](docs/competition.md) | 赛题、阶段成果、奖项、职责与决赛预留 |
+| [竞赛历程](docs/competition.md) | 赛题、三个阶段成果、奖项口径与职责 |
 | [知识产权与公开边界](docs/legal-and-ip.md) | 团队代码、第三方赛事资产、公开复现与贡献边界 |
 | [格式说明](docs/formats.md) | PAT / PRG / TIM / LVL / STIL / WGL 等格式约定 |
-| [路线图](docs/roadmap.md) | 已完成、决赛准备和开源工程演进计划 |
+| [路线图](docs/roadmap.md) | 已完成能力、决赛软件后续验证与工程演进计划 |
 | [常见问题](docs/faq.md) | 设备兼容、测试类型、数据真实性与使用边界 |
 | [变更记录](CHANGELOG.md) | 公开版本的能力、变更与已知限制 |
 | [引用元数据](CITATION.cff) | GitHub 可识别的软件引用信息 |

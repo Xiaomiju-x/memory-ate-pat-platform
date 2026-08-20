@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
   <title id="title">Memory ATE PAT Platform</title>
-  <desc id="desc">Project banner showing AT24C02 I2C and BY25Q40AL SPI memory-test pattern generation, Southwest regional first prize and national finals in preparation.</desc>
+  <desc id="desc">Project banner showing AT24C02 I2C, BY25Q40AL SPI and national-finals multi-device pattern generation, plus the Southwest regional first-prize award.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#07111f"/>
@@ -40,7 +40,7 @@
     <g transform="translate(64 344)" font-size="14" font-weight="650">
       <text x="0" y="0" fill="#6ee7b7">● 初赛平台 · 已完成</text>
       <text x="185" y="0" fill="#6ee7b7">● 复赛平台 · 已完成</text>
-      <text x="370" y="0" fill="#fbbf24">● 全国总决赛 · 准备中</text>
+      <text x="370" y="0" fill="#6ee7b7">● 决赛软件 · v1.0.9 已开源</text>
     </g>
   </g>
 

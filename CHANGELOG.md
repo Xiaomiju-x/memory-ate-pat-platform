@@ -6,14 +6,39 @@
 
 ## [Unreleased]
 
-### Planned
+### Changed
 
-- 全国总决赛 PAT 向量生成与测试软件仍在开发和验证；当前只保留
-  [`national-final/`](national-final/) 入口，不把计划功能描述为已经完成。
+- 全国总决赛已完赛，成绩预计于 2026 年 8 月 21 日公布；在官方结果公布前不声明任何决赛奖项或名次。
 
 ### Fixed
 
 - 统一更正奖项表述为“西南赛区一等奖”，删除此前不准确的名次性表述及其英文对应内容。
+
+## [national-final-v1.0.9] - 2026-08-20
+
+全国总决赛软件组件独立版本；不改变根 Python 平台的 `8.0.0` 版本号。
+
+### Added
+
+- 完整开源 `national-final/` Electron 离线桌面工程、锁定依赖、构建脚本与公开测试。
+- 固定/自定义 SPI Flash、23LC1024 SRAM、24LC02B I²C EEPROM、25LC256 SPI EEPROM 的 MEMORY/FUNC PAT 生成路径。
+- SPI / SDI / SQI、多种数据模式、地址范围、自定义事务、普通 PAT 编辑与六列批量替换。
+- 超大 PAT 的协作式生成、取消、磁盘流式存储、5,000 行窗口预览、流式校验与原生保存。
+- Electron sandbox、context isolation、最小 preload API、IPC sender/字段校验、离线 CSP 和网络阻断。
+- Windows + Node.js 22.12 CI，19 项 Node 单元/完整性测试及 31 项 Electron 交互/生成回归。
+- Apache-2.0 项目许可、Floating UI/Lucide 完整第三方许可文本与便携包分发配置。
+- GitHub Release 中的 Windows 10/11 x64 portable EXE 与 `SHA256SUMS.txt`。
+
+### Security
+
+- EXE 不要求管理员权限，不创建服务或安装项；renderer 无 Node.js/文件系统/进程执行权限。
+- 公开源码、构建和测试不附带内部参考 PAT、厂商资料、密钥、本机路径或其文件名/哈希。
+
+### Known limitations
+
+- Windows EXE 尚未使用商业代码签名证书，SmartScreen 可能显示“未知发布者”。
+- 仍需在第二台干净 Windows 电脑和目标 ATE/真实 DUT 环境完成独立验证。
+- 生成成功与公开测试通过不构成主办方、芯片厂商或 ATE 厂商认证。
 
 ## [8.0.0] - 2026-08-13
 

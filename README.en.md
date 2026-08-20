@@ -8,17 +8,19 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/Xiaomiju-x/memory-ate-pat-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Xiaomiju-x/memory-ate-pat-platform/actions/workflows/ci.yml)
 [![Regional Award](https://img.shields.io/badge/Southwest%20Region-First%20Prize-CB2B2B)](docs/competition.md)
-[![National Finals](https://img.shields.io/badge/National%20Finals-In%20Preparation-F59E0B)](docs/roadmap.md)
+[![National Finals](https://img.shields.io/badge/National%20Finals%20Software-v1.0.9%20Open%20Source-16A34A)](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9)
 
-![Memory ATE PAT Platform: AT24C02 preliminary platform, BY25Q40AL regional platform, and national-finals status](docs/assets/hero.svg)
+![Memory ATE PAT Platform: AT24C02 preliminary platform, BY25Q40AL regional platform, and national-finals PAT software](docs/assets/hero.svg)
 
-Memory ATE PAT Platform is an engineering project for generating, inspecting, and analyzing memory-device test patterns. It contains two completed, deliberately separate implementations:
+Memory ATE PAT Platform is an engineering project for generating, inspecting, and analyzing memory-device test patterns. It contains three deliberately separate implementations:
 
 - **Preliminary round — AT24C02 platform:** an end-to-end desktop and CLI platform covering protocol-level vectors, test plans, ATE project files, waveform/flow visualization, simulation, coverage, yield, and datalog analysis.
 - **Southwest regional round — BY25Q40AL platform:** a competition-tuned GUI/CLI generator for Standard, Dual, and Quad SPI, six memory-test modes, address-range handling, PAT validation, and reproducible public tests.
-- **National finals:** software is still being developed. This repository reserves a place for it but does not describe planned work as complete.
+- **National finals — multi-device PAT platform:** an offline Electron application for SPI Flash, SRAM, I²C EEPROM, and SPI EEPROM, with MEMORY/FUNC workflows, SPI/SDI/SQI modes, large-pattern streaming, and a Windows x64 portable release. Version 1.0.9 is open source.
 
-The team received **First Prize in the Southwest regional stage**. This is a team award. The repository maintainer’s primary responsibilities are code and algorithms, construction of the preliminary-round platform, and PAT software development for the regional and national-final stages. No national-final result is claimed. The certificate is published with permission; its QR code and certificate number are redacted while the award information and credited participants remain visible.
+The national finals have concluded, and results are expected on **August 21, 2026**. This repository does not claim any national-finals award or placement before the official result is published.
+
+The team received **First Prize in the Southwest regional stage**. This is a team award. The repository maintainer’s primary responsibilities are code and algorithms, construction of the preliminary-round platform, and PAT software development for the regional and national-final stages. No national-finals result is claimed before the official announcement. The certificate is published with permission; its QR code and certificate number are redacted while the award information and credited participants remain visible.
 
 ![Certificate for First Prize in the Southwest regional stage, with its QR code and certificate number redacted](docs/assets/awards/southwest-first-prize-redacted.png)
 
@@ -53,6 +55,18 @@ Lawful holders may perform their own offline checks only within the scope of the
 - 24-bit address validation, 256-byte page alignment for programming, and exact user ranges for read comparison;
 - a team-authored parameterized generator, PAT syntax/transaction validation, GUI, CLI, and public generalized regression tests;
 - a standalone Windows build path without bundling third-party competition assets.
+
+### National-finals PAT platform
+
+- an offline Electron desktop application for Windows 10/11 x64, requiring no Python or Node.js at runtime;
+- fixed and custom SPI Flash plus 23LC1024 SRAM, 24LC02B I²C EEPROM, and 25LC256 SPI EEPROM;
+- MEMORY/FUNC views, SPI/SDI/SQI, data modes, address ranges, and configurable transactions;
+- editable normal-size previews, six-column replacement, validation, and native file saving;
+- cooperative generation, cancellation, disk-backed streaming, and a bounded 5,000-line preview for very large PAT files;
+- sandboxed Electron renderer, context isolation, allow-listed IPC, offline CSP, and network blocking;
+- locked dependencies, 19 public Node unit/integrity tests, 31 Electron interaction/generation checks, reproducible build scripts, and bundled third-party notices.
+
+See [`national-final/`](national-final/README.md) for source and build instructions, or download the Windows portable executable from the [`national-final-v1.0.9` release](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9). The software still requires target-ATE, device, and authorized-format validation; publication is not organizer certification or an award claim.
 
 ## Quick start
 
@@ -106,6 +120,18 @@ python -m unittest discover -s tests -v
 Pop-Location
 ```
 
+Run the national-finals platform from source with Node.js 22.12.0:
+
+```powershell
+Push-Location national-final
+npm ci
+npm test
+npm run start
+Pop-Location
+```
+
+Users who do not need a development environment can download the Windows x64 portable build from the [release page](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9) and verify its SHA-256 there.
+
 See the full [`quickstart`](docs/quickstart.md) for configuration, validation, and Windows packaging.
 
 ## Output formats
@@ -122,7 +148,7 @@ See the full [`quickstart`](docs/quickstart.md) for configuration, validation, a
 | `.json` | Reproducible configuration snapshots |
 | `.csv`, `.dlog`, `.stdf` | Statistics and test-data exchange |
 
-PAT files from the two platforms are not interchangeable merely because they share an extension. Pin ordering, vector symbols, clock phases, compare timing, labels, and file-level conventions must be interpreted together. See [`docs/formats.md`](docs/formats.md).
+PAT files from the three platforms are not interchangeable merely because they share an extension. Pin ordering, vector symbols, clock phases, compare timing, labels, and file-level conventions must be interpreted together. See [`docs/formats.md`](docs/formats.md).
 
 ## Validation boundaries
 
@@ -143,7 +169,7 @@ The project is not official software from the competition organizer, ShengDaKe, 
 - [`docs/competition.md`](docs/competition.md) — stages, award wording, and responsibilities;
 - [`docs/formats.md`](docs/formats.md) — vector states and file-format contracts;
 - [`docs/legal-and-ip.md`](docs/legal-and-ip.md) — open-source and restricted-asset boundaries;
-- [`docs/roadmap.md`](docs/roadmap.md) — completed work, finals preparation, and engineering roadmap;
+- [`docs/roadmap.md`](docs/roadmap.md) — completed work, finals-platform validation, and engineering roadmap;
 - [`docs/faq.md`](docs/faq.md) — common technical and project questions;
 - [`CHANGELOG.md`](CHANGELOG.md) — public releases, significant changes, and known limitations;
 - [`CITATION.cff`](CITATION.cff) — machine-readable software citation metadata.

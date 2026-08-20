@@ -1,0 +1,29 @@
+{
+  "name": "pat-generator-tool",
+  "version": "1.0.9",
+  "description": "集创赛决赛版离线 PAT 向量生成工具",
+  "private": true,
+  "main": "main.js",
+  "author": "PAT Generator Team",
+  "license": "Apache-2.0",
+  "packageManager": "npm@10.9.0",
+  "scripts": {
+    "start": "electron .",
+    "test": "npm run test:unit && npm run test:smoke",
+    "test:unit": "node --test tests/project-integrity.test.js tests/large-pat-store.test.js tests/save-file.test.js tests/publication-boundary.test.js",
+    "test:smoke": "electron tests/electron-smoke.js",
+    "portable": "node scripts/build-portable.js"
+  },
+  "dependencies": {
+    "@floating-ui/core": "1.7.3",
+    "@floating-ui/dom": "1.7.4",
+    "lucide": "1.17.0"
+  },
+  "devDependencies": {
+    "electron": "43.4.0",
+    "electron-builder": "26.15.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

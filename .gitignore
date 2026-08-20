@@ -19,6 +19,8 @@ build/
 dist/
 **/build/
 **/dist/
+node_modules/
+**/node_modules/
 *.exe
 *.msi
 *.pkg
@@ -68,6 +70,16 @@ Desktop.ini
 
 # Local poster/export staging
 /work/
+/national-final/work/
+/national-final/source/
+/national-final/tests/compatibility-contract.js
+/national-final/tests/incremental-compatibility.test.js
+/national-final/tests/incremental-compatibility-smoke.js
+
+# npm/package-lock.json is the canonical finals dependency workflow. Keep
+# machine-generated pnpm workspace metadata out of the public source tree.
+/national-final/pnpm-lock.yaml
+/national-final/pnpm-workspace.yaml
 
 # Local compatibility environment used during release checks
 /.venv/
@@ -94,3 +106,10 @@ Desktop.ini
 
 # Intentionally keep the canonical output/ package and team-authored historical
 # snapshots under examples/legacy/ eligible for tracking.
+
+# The finals Electron project keeps its small source icon under build/ even
+# though generated build directories remain ignored everywhere else.
+!/national-final/build/
+!/national-final/build/icon.svg
+!/national-final/build/icon.png
+!/national-final/build/icon.ico

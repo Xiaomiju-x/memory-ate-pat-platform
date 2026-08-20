@@ -1,6 +1,6 @@
 # 架构说明 / Architecture
 
-项目有两套入口。根平台追求功能覆盖、分析闭环和器件扩展；复赛平台追求对竞赛 PAT 方言的精确约束与可回归交付。两者共享“配置 → 生成 → 验证 → 格式化 → 导出”的思想，但不共享全部代码，也不应混用格式假设。
+项目有三套入口。根平台追求功能覆盖、分析闭环和器件扩展；复赛平台追求对指定竞赛 PAT 方言的精确约束与可回归交付；全国总决赛平台追求多类存储器、超大 PAT 和离线 Electron 桌面交付。三者共享“配置 → 生成 → 验证 → 格式化 → 导出”的思想，但不共享全部代码，也不应混用格式假设。
 
 ## 总体视图
 
@@ -126,6 +126,39 @@ flowchart TD
 - 页写范围按 256 Byte 对齐，读比较范围不扩展；
 - `PATValidator` 与事务验证共同阻止状态字符、块结构和总线语义回退；
 - 第三方赛事资料不是该流水线的输入；本项目不接收、不定位、不自动读取或提供相关资产/哈希/复制/对比工具。
+
+## 全国总决赛 Electron 平台
+
+决赛工程位于 `national-final/`，采用主进程、受限 preload 和纯前端 renderer 三层结构：
+
+```mermaid
+flowchart LR
+    UI["renderer/index.html<br/>器件配置 · PAT 生成 · 校验 · 预览"]
+    PRE["preload.js<br/>最小 window.desktopAPI"]
+    MAIN["main.js<br/>窗口/会话安全 · IPC 白名单"]
+    SAVE["save-file.js<br/>原生另存为 · CRLF/后缀"]
+    STORE["large-pat-store.js<br/>随机 token · 磁盘流式 PAT"]
+    FILES["用户选择的 .pat / .txt"]
+
+    UI -->|受控 IPC| PRE
+    PRE --> MAIN
+    MAIN --> SAVE
+    MAIN --> STORE
+    SAVE --> FILES
+    STORE --> SAVE
+```
+
+关键边界：
+
+- renderer 设置 `nodeIntegration: false`、`contextIsolation: true`、`sandbox: true`，不能直接调用 `fs` 或执行系统命令；
+- preload 只暴露保存和大 PAT 流式操作，不暴露通用 IPC；
+- 主进程验证 sender URL、请求字段白名单、类型、长度、token 和读写范围；
+- CSP 与 session 层共同拒绝外部网络、下载、新窗口、WebView、外部导航和权限请求；
+- 普通 PAT 在 renderer 中编辑；大 PAT 从生成开始写入临时文件，使用 5,000 行窗口预览，保存时不把全文复制回 renderer；
+- 应用退出、取消、替换失败和 token 废弃都会触发临时文件清理；
+- `package-lock.json`、`.nvmrc`、Electron builder 配置和第三方许可共同形成公开构建输入。
+
+业务页面同时包含 SPI Flash、SRAM、I²C EEPROM、SPI EEPROM 的固定与自定义生成路径。完整当前实现位于公开 renderer；团队内部历史兼容快照被 Git 明确排除。内部参考 PAT、厂商文档和其他受限资料不是 CI、构建或公开复现输入。
 
 ## 验证层级
 

@@ -1,0 +1,39 @@
+appId: com.pat.generator.tool
+productName: PAT生成工具
+copyright: Copyright © 2026 PAT Generator Team
+
+directories:
+  output: dist
+  buildResources: build
+
+files:
+  - main.js
+  - preload.js
+  - save-file.js
+  - large-pat-store.js
+  - renderer/**/*
+  - THIRD_PARTY_NOTICES.md
+  - licenses/**/*
+
+extraResources:
+  - from: ../LICENSE
+    to: LICENSE
+
+asar: true
+npmRebuild: true
+beforeBuild: scripts/skip-dependency-rebuild.js
+compression: maximum
+publish: null
+
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+  icon: build/icon.ico
+  requestedExecutionLevel: asInvoker
+  signAndEditExecutable: true
+
+portable:
+  artifactName: PAT生成工具.exe
+  requestExecutionLevel: user

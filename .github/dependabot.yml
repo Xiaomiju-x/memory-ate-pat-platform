@@ -25,3 +25,15 @@ updates:
       actions:
         patterns:
           - "*"
+
+  - package-ecosystem: "npm"
+    directory: "/national-final"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    groups:
+      national-final-dependencies:
+        patterns:
+          - "*"
