@@ -14,6 +14,13 @@ competition- or vendor-provided PAT files.
 - WEL/WIP sequencing, volatile QE handling for Quad flows, and EStar-subset validation
 - GUI and headless batch generation
 
+## Interface
+
+The screenshot below is from the public generator after it produced and validated the
+Standard-SPI erase-check and program/read PAT files for a 512-byte comparison range.
+
+![BY25Q40AL public generator with generated PAT output](../../docs/assets/screenshots/regional-by25q40al-platform.png)
+
 ## Run
 
 Python 3.10 or newer is sufficient; this edition uses only the standard library.

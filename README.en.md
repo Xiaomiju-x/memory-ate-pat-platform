@@ -36,6 +36,22 @@ It does **not** distribute organizer-provided golden PAT files, vendor FUNC refe
 
 Lawful holders may perform their own offline checks only within the scope of their authorization. This project does not accept, locate, automatically read, or provide restricted assets, and it provides no asset hashes, copying utilities, or private-reference comparison tools. Private validation is not part of the public reproduction procedure. See [`docs/legal-and-ip.md`](docs/legal-and-ip.md).
 
+## Software screenshots
+
+These are real captures of the current public builds, not mockups. The regional and national-finals views show PAT output produced by the applications.
+
+### Preliminary round — AT24C02 platform
+
+![AT24C02 preliminary-round test platform](docs/assets/screenshots/preliminary-at24c02-platform.png)
+
+### Regional round — BY25Q40AL platform
+
+![BY25Q40AL regional platform after generating and validating PAT output](docs/assets/screenshots/regional-by25q40al-platform.png)
+
+### National finals — multi-device PAT platform
+
+![National-finals platform after generating an 11,347-line MEMORY PAT](docs/assets/screenshots/national-final-pat-platform.png)
+
 ## Highlights
 
 ### AT24C02 and general platform

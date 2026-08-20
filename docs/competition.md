@@ -33,6 +33,8 @@
 - [`generate_samples.py`](../generate_samples.py)
 - [`output/`](../output/)
 
+![初赛 AT24C02 完整测试平台运行界面](assets/screenshots/preliminary-at24c02-platform.png)
+
 ### 复赛：BY25Q40AL 竞赛优化 PAT 平台
 
 复赛阶段面对的主要问题从“功能覆盖”转为指定芯片和现场 PAT 约束下的稳定生成。因此单独开发了 BY25Q40AL 工具，公开部分重点包括：
@@ -50,6 +52,8 @@
 - [`regional-final/by25q40al/`](../regional-final/by25q40al/)
 - [`regional-final/by25q40al/README.md`](../regional-final/by25q40al/README.md)
 - [`regional-final/by25q40al/tests/`](../regional-final/by25q40al/tests/)
+
+![复赛 BY25Q40AL 平台生成并校验 PAT 后的运行界面](assets/screenshots/regional-by25q40al-platform.png)
 
 比赛现场内部版本曾在获授权环境运行 30 项回归；公开版因合规不附赛方黄金 PAT、FUNC 参考模板或其他第三方赛事资料，因此公开 CI 不代表私有参考语料的逐字节验证。这套工具的“优化”主要指对赛题输入、指定芯片和现场交付流程的针对性约束，不代表对所有 SPI Flash 或所有 ATE 的普遍最优。
 
@@ -70,6 +74,8 @@
 - [`national-final/`](../national-final/)
 - [`national-final/README.md`](../national-final/README.md)
 - [`national-final-v1.0.9` Release](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9)
+
+![全国总决赛 PAT 软件生成 11347 行 MEMORY PAT 后的运行界面](assets/screenshots/national-final-pat-platform.png)
 
 软件基线已发布，但比赛成绩尚未公布，EXE 也未使用商业代码签名。公开测试覆盖软件结构与协议契约，不替代目标 ATE 导入、真实器件、负载板、电平时序和设备安全签核。内部参考 PAT、厂商资料和其他无公开再分发权的内容不随仓库发布。
 

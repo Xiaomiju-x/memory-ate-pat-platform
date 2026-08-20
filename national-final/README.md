@@ -16,6 +16,12 @@
 - 目标平台：Windows 10/11 x64
 - 默认窗口：1440×900，最小 1100×700，可最大化
 
+## 软件界面
+
+下图为公开便携版实际运行界面：选择 BY25Q40AL、Standard SPI、ALL 0 数据图形后，软件已生成并加载一份 `11,347` 行的 MEMORY PAT，可继续编辑、校验或保存。
+
+![全国总决赛 PAT 软件生成 11347 行 MEMORY PAT 后的运行界面](../docs/assets/screenshots/national-final-pat-platform.png)
+
 ## 保留的页面能力
 
 - 中文界面以及 MEMORY / FUNC 页面切换；

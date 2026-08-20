@@ -35,6 +35,7 @@
 
 - [项目为什么开源](#项目为什么开源)
 - [竞赛阶段与仓库内容](#竞赛阶段与仓库内容)
+- [三套软件界面](#三套软件界面)
 - [核心能力](#核心能力)
 - [快速开始](#快速开始)
 - [输出文件](#输出文件)
@@ -74,6 +75,22 @@ PAT 工具常常同时涉及器件协议、存储器测试算法、ATE 向量语
 | 全国总决赛 | 多器件 MEMORY/FUNC PAT 生成、超大文件流式处理 | Electron 源码、测试、可复现构建与 Windows x64 Release | **软件 v1.0.9 已开源；成绩待公布** |
 
 阶段背景、奖项口径和个人分工见[竞赛历程](docs/competition.md)。
+
+## 三套软件界面
+
+以下截图均来自本仓库当前公开版本的真实运行界面，不是效果图。复赛与决赛截图展示了 PAT 实际生成后的结果预览。
+
+### 初赛：AT24C02 完整测试平台
+
+![AT24C02 初赛完整测试平台运行界面](docs/assets/screenshots/preliminary-at24c02-platform.png)
+
+### 复赛：BY25Q40AL 竞赛优化 PAT 平台
+
+![BY25Q40AL 复赛平台生成并校验 PAT 后的运行界面](docs/assets/screenshots/regional-by25q40al-platform.png)
+
+### 全国总决赛：多器件 PAT 生成软件平台
+
+![全国总决赛 PAT 软件生成 11347 行 MEMORY PAT 后的运行界面](docs/assets/screenshots/national-final-pat-platform.png)
 
 ## 核心能力
 
