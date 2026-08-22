@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
   <title id="title">Memory ATE PAT Platform</title>
-  <desc id="desc">Project banner showing AT24C02 I2C, BY25Q40AL SPI and national-finals multi-device pattern generation, plus the Southwest regional first-prize award.</desc>
+  <desc id="desc">Project banner showing AT24C02 I2C, BY25Q40AL SPI and national-finals multi-device pattern generation, plus First Prize awards in the Southwest regional stage and National Finals.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#07111f"/>
@@ -32,15 +32,15 @@
     <text x="64" y="249" fill="#b8c7db" font-size="20">AT24C02 · I²C EEPROM  /  BY25Q40AL · SPI NOR Flash</text>
 
     <g transform="translate(64 277)">
-      <rect width="382" height="42" rx="21" fill="#7f1d1d" stroke="#fca5a5" stroke-opacity=".45"/>
+      <rect width="460" height="42" rx="21" fill="#7f1d1d" stroke="#fca5a5" stroke-opacity=".45"/>
       <circle cx="23" cy="21" r="8" fill="#fbbf24"/>
-      <text x="43" y="27" fill="#fff7ed" font-size="16" font-weight="700">西南赛区一等奖</text>
+      <text x="43" y="27" fill="#fff7ed" font-size="16" font-weight="700">西南赛区一等奖 · 全国总决赛一等奖</text>
     </g>
 
     <g transform="translate(64 344)" font-size="14" font-weight="650">
       <text x="0" y="0" fill="#6ee7b7">● 初赛平台 · 已完成</text>
       <text x="185" y="0" fill="#6ee7b7">● 复赛平台 · 已完成</text>
-      <text x="370" y="0" fill="#6ee7b7">● 决赛软件 · v1.0.9 已开源</text>
+      <text x="370" y="0" fill="#fbbf24">● 全国一等奖 · 软件已开源</text>
     </g>
   </g>
 

@@ -8,6 +8,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/Xiaomiju-x/memory-ate-pat-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Xiaomiju-x/memory-ate-pat-platform/actions/workflows/ci.yml)
 [![Regional Award](https://img.shields.io/badge/Southwest%20Region-First%20Prize-CB2B2B)](docs/competition.md)
+[![National Finals Award](https://img.shields.io/badge/National%20Finals-First%20Prize-D4A017)](docs/competition.md)
 [![National Finals](https://img.shields.io/badge/National%20Finals%20Software-v1.0.9%20Open%20Source-16A34A)](https://github.com/Xiaomiju-x/memory-ate-pat-platform/releases/tag/national-final-v1.0.9)
 
 ![Memory ATE PAT Platform: AT24C02 preliminary platform, BY25Q40AL regional platform, and national-finals PAT software](docs/assets/hero.svg)
@@ -18,13 +19,23 @@ Memory ATE PAT Platform is an engineering project for generating, inspecting, an
 - **Southwest regional round — BY25Q40AL platform:** a competition-tuned GUI/CLI generator for Standard, Dual, and Quad SPI, six memory-test modes, address-range handling, PAT validation, and reproducible public tests.
 - **National finals — multi-device PAT platform:** an offline Electron application for SPI Flash, SRAM, I²C EEPROM, and SPI EEPROM, with MEMORY/FUNC workflows, SPI/SDI/SQI modes, large-pattern streaming, and a Windows x64 portable release. Version 1.0.9 is open source.
 
-The national finals have concluded, and results are expected on **August 21, 2026**. This repository does not claim any national-finals award or placement before the official result is published.
+The national finals have concluded, and the team received **First Prize in the National Finals**. “First Prize” is an award tier, not an overall ranking.
 
-The team received **First Prize in the Southwest regional stage**. This is a team award. The repository maintainer’s primary responsibilities are code and algorithms, construction of the preliminary-round platform, and PAT software development for the regional and national-final stages. No national-finals result is claimed before the official announcement. The certificate is published with permission; its QR code and certificate number are redacted while the award information and credited participants remain visible.
+The team received **First Prize in the Southwest regional stage** and **First Prize in the National Finals**. These are team awards. The repository maintainer’s primary responsibilities are code and algorithms, construction of the preliminary-round platform, and PAT software development for the regional and national-final stages. The regional certificate is published with permission; its QR code and certificate number are redacted while the award information and credited participants remain visible.
 
 ![Certificate for First Prize in the Southwest regional stage, with its QR code and certificate number redacted](docs/assets/awards/southwest-first-prize-redacted.png)
 
 > Published to document the team award. The [official award listing](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083) provides an additional public competition record. Names, seals, and competition marks remain with their respective rights holders; displaying the certificate does not imply endorsement of this repository.
+
+### National Finals First Prize and team memories
+
+The following documentary photographs record the team’s national-finals trip to Shanghai, the project poster session, and the First Prize ceremony. Team members have consented to publication of their real likenesses. Hidden EXIF/GPS metadata has been removed, and unrelated attendees are not identified.
+
+| Shanghai team memory | National-finals poster session | First Prize ceremony |
+|---|---|---|
+| ![Team photograph in Shanghai during the National Finals](docs/assets/competition/national-finals-team-in-shanghai.jpg) | ![Team photograph in front of the 10th competition's national-finals poster wall](docs/assets/competition/national-finals-poster-session.jpg) | ![Team member at the National Finals First Prize ceremony](docs/assets/competition/national-first-prize-ceremony.jpg) |
+
+> These photographs document the team’s participation and award. Team likenesses are published with consent. Event graphics, posters, marks, and venue materials remain with their respective rights holders; display does not imply endorsement of this repository.
 
 The official context is available from the [10th competition rules](https://univ.ciciec.com/col.jsp?id=123), the [official ShengDaKe challenge page](https://univ.ciciec.com/nd.jsp?id=1024), and the [official award listing](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083). The detailed project story is documented in [`docs/competition.md`](docs/competition.md).
 

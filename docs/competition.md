@@ -4,7 +4,7 @@
 
 本项目为全国大学生集成电路创新创业大赛[第十届“胜达克”企业命题](https://univ.ciciec.com/nd.jsp?id=1024)开发，主题是存储类芯片自动化测试系统与 PAT 测试向量软件。
 
-团队在**西南赛区获得一等奖**。全国总决赛已完赛，成绩预计于 **2026 年 8 月 21 日**公布；在官方结果公布前，本仓库不声称任何总决赛奖项或名次。大赛官网已发布[成都工业学院赛点获奖名单公示](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)；证书是西南赛区奖项口径的直接材料。
+团队在**西南赛区获得一等奖**，并在**全国总决赛获得一等奖（全国一等奖）**。这里的“一等奖”是奖项等级，不是名次口径。大赛官网已发布[成都工业学院赛点获奖名单公示](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)；证书是西南赛区奖项口径的直接材料，全国总决赛奖项由现场颁奖记录和团队获奖材料记录。
 
 证书已获授权公开。展示版本保留团队成员、指导教师和奖项信息，遮蔽二维码与证书编号，以减少无关标识信息的传播。
 
@@ -12,7 +12,19 @@
 
 > 图片仅用于记录团队获得西南赛区一等奖的赛事经历；上方大赛官网获奖名单提供公开赛事记录。展示不表示主办方或命题企业为本开源仓库背书。
 
-> **English:** This project was developed for the “ShengDaKe” enterprise challenge of China’s National College Student Integrated Circuit Innovation and Entrepreneurship Competition. The team received First Prize in the Southwest regional stage. The national finals have concluded; results are expected on August 21, 2026, and no finals award or placement is claimed before the official announcement. The national-finals PAT platform v1.0.9 is open source.
+> **English:** This project was developed for the “ShengDaKe” enterprise challenge of China’s National College Student Integrated Circuit Innovation and Entrepreneurship Competition. The team received First Prize in the Southwest regional stage and First Prize in the National Finals. “First Prize” is an award tier, not an overall ranking. The national-finals PAT platform v1.0.9 is open source.
+
+## 全国总决赛一等奖与参赛纪念
+
+2026 年 8 月，团队赴上海参加第十届大赛全国总决赛，并获得全国总决赛一等奖。以下三张照片分别记录上海参赛行程、总决赛项目海报展示和一等奖颁奖现场。团队成员已同意公开本人真实人物形象；公开副本已移除 EXIF/GPS 等隐藏元数据。颁奖现场含其他参赛者，但本文不标注或识别无关人员。
+
+![团队在上海外滩参加全国总决赛期间合影](assets/competition/national-finals-team-in-shanghai.jpg)
+
+![团队在第十届集创赛芯片设计与产业链赛项总决赛海报墙前合影](assets/competition/national-finals-poster-session.jpg)
+
+![团队成员在第十届集创赛全国总决赛一等奖颁奖现场](assets/competition/national-first-prize-ceremony.jpg)
+
+> 照片仅用于赛事经历记录；人物肖像已获团队成员同意公开。赛事背景、其他参赛项目海报、标识和现场布置不属于本项目 Apache-2.0 许可范围，展示不表示主办方或命题企业为本仓库背书。
 
 ## 三个阶段，三种工程重点
 
@@ -57,7 +69,7 @@
 
 比赛现场内部版本曾在获授权环境运行 30 项回归；公开版因合规不附赛方黄金 PAT、FUNC 参考模板或其他第三方赛事资料，因此公开 CI 不代表私有参考语料的逐字节验证。这套工具的“优化”主要指对赛题输入、指定芯片和现场交付流程的针对性约束，不代表对所有 SPI Flash 或所有 ATE 的普遍最优。
 
-### 全国总决赛：软件 v1.0.9 已开源，成绩待公布
+### 全国总决赛：全国一等奖，软件 v1.0.9 已开源
 
 决赛阶段形成了独立的多器件 PAT 生成软件平台，当前公开内容包括：
 

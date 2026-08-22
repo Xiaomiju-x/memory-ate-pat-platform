@@ -12,9 +12,9 @@ abstract: >-
   An open-source memory-device ATE test and PAT generation platform containing
   the completed AT24C02 preliminary-round system and the competition-tuned
   BY25Q40AL Southwest regional-round generator, plus the open-source
-  national-finals multi-device PAT platform v1.0.9. The national finals have
-  concluded; no finals award or placement is claimed before the official
-  result is published.
+  national-finals multi-device PAT platform v1.0.9. The team received First
+  Prize in the Southwest regional stage and First Prize in the National
+  Finals.
 repository-code: https://github.com/Xiaomiju-x/memory-ate-pat-platform
 url: https://github.com/Xiaomiju-x/memory-ate-pat-platform
 license: Apache-2.0
