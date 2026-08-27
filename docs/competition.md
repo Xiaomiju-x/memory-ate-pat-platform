@@ -4,13 +4,15 @@
 
 本项目为全国大学生集成电路创新创业大赛[第十届“胜达克”企业命题](https://univ.ciciec.com/nd.jsp?id=1024)开发，主题是存储类芯片自动化测试系统与 PAT 测试向量软件。
 
-团队在**西南赛区获得一等奖**，并在**全国总决赛获得一等奖（全国一等奖）**。这里的“一等奖”是奖项等级，不是名次口径。大赛官网已发布[成都工业学院赛点获奖名单公示](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)；证书是西南赛区奖项口径的直接材料，全国总决赛奖项由现场颁奖记录和团队获奖材料记录。
+团队在**西南赛区获得一等奖**，并在**全国总决赛获得一等奖（全国一等奖）**。这里的“一等奖”是奖项等级，不是名次口径。大赛官网已发布[成都工业学院赛点获奖名单公示](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083)；两份证书分别是西南赛区和全国总决赛奖项口径的直接材料。
 
-证书已获授权公开。展示版本保留团队成员、指导教师和奖项信息，遮蔽二维码与证书编号，以减少无关标识信息的传播。
+两份证书均已获授权公开。展示版本保留团队成员、指导教师和奖项信息，遮蔽二维码与证书编号，以减少无关标识信息的传播。
 
-![全国大学生集成电路创新创业大赛西南赛区一等奖证书（二维码与证书编号已遮蔽）](assets/awards/southwest-first-prize-redacted.png)
+| 西南赛区一等奖证书 | 全国总决赛一等奖证书 |
+|---|---|
+| ![全国大学生集成电路创新创业大赛西南赛区一等奖证书（二维码与证书编号已遮蔽）](assets/awards/southwest-first-prize-redacted.png) | ![全国大学生集成电路创新创业大赛全国总决赛一等奖证书（二维码与证书编号已遮蔽）](assets/awards/national-finals-first-prize-redacted.png) |
 
-> 图片仅用于记录团队获得西南赛区一等奖的赛事经历；上方大赛官网获奖名单提供公开赛事记录。展示不表示主办方或命题企业为本开源仓库背书。
+> 图片仅用于记录团队获得西南赛区一等奖和全国总决赛一等奖的赛事经历；上方大赛官网获奖名单提供公开赛事记录。展示不表示主办方或命题企业为本开源仓库背书。
 
 > **English:** This project was developed for the “ShengDaKe” enterprise challenge of China’s National College Student Integrated Circuit Innovation and Entrepreneurship Competition. The team received First Prize in the Southwest regional stage and First Prize in the National Finals. “First Prize” is an award tier, not an overall ranking. The national-finals PAT platform v1.0.9 is open source.
 
@@ -121,7 +123,7 @@
 
 - [第十届大赛章程](https://univ.ciciec.com/col.jsp?id=123)明确区分团队独立作品与企业资料，并要求赛事资源未经授权不得传播；本仓库据此只发布团队拥有权利的部分。
 - 赛题归属与项目背景可在[官方“胜达克”企业命题页](https://univ.ciciec.com/nd.jsp?id=1024)核对。
-- 证书图片用于证明本项目对应的西南赛区奖项；转载时请保留上下文，不用于暗示主办方为本开源仓库背书。
+- 证书图片用于证明本项目对应的西南赛区和全国总决赛奖项；转载时请保留上下文，不用于暗示主办方为本开源仓库背书。
 - 比赛名称、企业名称、芯片型号和设备名称归其各自权利人所有，仅用于说明兼容目标和项目背景。
 - 仓库不是主办方、命题企业、芯片厂商或 ATE 厂商的官方发布渠道。
 - 如公开材料中仍有应脱敏内容，请按 [SECURITY.md](../SECURITY.md) 私下报告，不要在公开 Issue 中扩散。

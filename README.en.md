@@ -21,11 +21,13 @@ Memory ATE PAT Platform is an engineering project for generating, inspecting, an
 
 The national finals have concluded, and the team received **First Prize in the National Finals**. “First Prize” is an award tier, not an overall ranking.
 
-The team received **First Prize in the Southwest regional stage** and **First Prize in the National Finals**. These are team awards. The repository maintainer’s primary responsibilities are code and algorithms, construction of the preliminary-round platform, and PAT software development for the regional and national-final stages. The regional certificate is published with permission; its QR code and certificate number are redacted while the award information and credited participants remain visible.
+The team received **First Prize in the Southwest regional stage** and **First Prize in the National Finals**. These are team awards. The repository maintainer’s primary responsibilities are code and algorithms, construction of the preliminary-round platform, and PAT software development for the regional and national-final stages. Both certificates are published with permission; their QR codes and certificate numbers are redacted while the award information and credited participants remain visible.
 
-![Certificate for First Prize in the Southwest regional stage, with its QR code and certificate number redacted](docs/assets/awards/southwest-first-prize-redacted.png)
+| Southwest regional First Prize | National Finals First Prize |
+|---|---|
+| ![Certificate for First Prize in the Southwest regional stage, with its QR code and certificate number redacted](docs/assets/awards/southwest-first-prize-redacted.png) | ![Certificate for First Prize in the National Finals, with its QR code and certificate number redacted](docs/assets/awards/national-finals-first-prize-redacted.png) |
 
-> Published to document the team award. The [official award listing](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083) provides an additional public competition record. Names, seals, and competition marks remain with their respective rights holders; displaying the certificate does not imply endorsement of this repository.
+> Published to document the team awards. The [official award listing](https://univ.ciciec.com/nd.jsp?fromMid=3&groupId=2&id=1083) provides an additional public competition record. Names, seals, and competition marks remain with their respective rights holders; displaying the certificates does not imply endorsement of this repository.
 
 ### National Finals First Prize and team memories
 
