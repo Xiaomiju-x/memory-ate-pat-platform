@@ -15,12 +15,12 @@
     "portable": "node scripts/build-portable.js"
   },
   "dependencies": {
-    "@floating-ui/core": "1.7.3",
-    "@floating-ui/dom": "1.7.4",
-    "lucide": "1.17.0"
+    "@floating-ui/core": "1.8.0",
+    "@floating-ui/dom": "1.8.0",
+    "lucide": "1.37.0"
   },
   "devDependencies": {
-    "electron": "43.4.0",
+    "electron": "44.0.0",
     "electron-builder": "26.15.3"
   },
   "engines": {
